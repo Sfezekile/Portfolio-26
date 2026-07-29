@@ -1,0 +1,328 @@
+:root {
+    --black: #1a1a1a;
+    --white: #fff;
+    --text: #d6d6d6;
+    --gray: rgba(255,255,255,0.15);
+    --gray-2: #c1c1c1;
+    --sub-header: #818080;
+    --bg: #333;
+    --bg-2: #222;
+    --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
+}
+
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(180deg, #333 0%, #222 100%); /* fallback color */
+}
+/* ----- DESKTOP / WALLPAPER ----- */
+#desktop {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url('https://4kwallpapers.com/images/walls/thumbs_2t/8135.jpg') ; */
+    background-image: url('./macos-13-macos-ventura-macos-2022-stock-light-5k-retina-3840x2160-8135.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+/* ----- DESKTOP ICONS ----- */
+.desktop-icon {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 10px 5px;
+    color: var(--white);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.15s;
+    text-align: center;
+    font-size: 13px;
+}
+.desktop-icon:hover {
+    background: rgba(255,255,255,0.15);
+}
+.desktop-icon .icon-img {
+    font-size: 48px;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+}
+.desktop-icon .icon-label {
+    background: rgba(0,0,0,0.4);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+}
+
+
+/* ----- MENUBAR ----- */
+#menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: var(--black);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    padding: 5px 12px;
+    z-index: 1000;
+    color: var(--text);
+    gap: 8px;
+    
+    button {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--text);
+        border: none;
+        border-radius: 5px;
+        padding: 2px 4px;
+        background: transparent;
+    }
+}
+
+.menubar-clock {
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.9;
+    padding: 0 8px;
+}
+
+/* ----- TASKBAR ----- */
+#taskbar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    z-index: 1000;
+    color: white;
+    gap: 8px;
+}
+
+.taskbar-container {
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.164);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 5px;
+    z-index: 1000;
+    color: white;
+    gap: 8px;
+    min-width: 200px;
+    /* overflow: hidden; */
+}
+
+.taskbar-icons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 35px);
+    grid-template-columns: repeat(1, 40px);
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    overflow-x: auto;
+    padding: 4px 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.taskbar-icons-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+#start-btn {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 5px 6px 7px 5px;
+    border-radius: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.349);
+    border-left: 1px solid rgba(255, 255, 255, 0.349);
+    /* border-bottom: 1px solid #ffffff09;
+    border-right: 1px solid #ffffff09; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+#start-btn span {
+    display: block;
+    position: absolute;
+    top: -35px;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    color: var(--black);
+    background: white;
+    opacity: 0;
+}
+#start-btn:hover span {
+    transition: all 0.2s ease-in;
+    opacity: 1;
+}
+
+#start-btn:hover {
+    transition: all 0.9s ease-in;
+    background: rgba(255,255,255,0.2);
+}
+
+#start-btn .logo {
+    font-size: 20px;
+}
+
+/* ----- TASKBAR ICONS ----- */
+.taskbar-icon {
+    /* background: rgba(255,255,255,0.1); */
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    position: relative;
+    min-width: 40px;
+}
+
+.taskbar-icon:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+.taskbar-icon .icon-img, .icon-img img {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    width: 35px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+.icon-img {
+    width: 35px;
+    height: 35px;
+    line-height: 0.75;
+}
+.taskbar-icon::after {
+    content: '';
+    position: relative;
+    bottom: 0px;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    border-radius: 10px;
+    background: rgba(59, 55, 55, 0.473); 
+}
+
+.taskbar-icon .icon-active {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 2px 2px;
+    border-radius: 12px;
+    font-size: 12px;
+    width: 1px;
+    height: 3px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.taskbar-icon .icon-active.active {
+    width: 20px;
+    background: rgba(100, 200, 255, 0.6);
+}
+
+.taskbar-icon .taskbar-label {
+    display: block;
+    position: absolute;
+    top: -35px;
+    height: 25px;
+    white-space: nowrap;       /* Prevent text from wrapping to the next line */
+    overflow: hidden;          /* Hide overflowing text */
+    text-overflow: ellipsis;   /* Show "..." when text is cut off */
+    padding: 5px;
+    font-size: 11px;
+    border-radius: 5px;
+    color: var(--black);
+    background: white;
+    opacity: 0;
+}
+
+.taskbar-icon:hover .taskbar-label {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #taskbar {
+        left: 10px;
+        right: 10px;
+        transform: none;
+    }
+    
+    .taskbar-icon .icon-img {
+        font-size: 22px;
+    }
+    
+    .taskbar-icon {
+        padding: 4px 6px;
+        min-width: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .taskbar-icon .icon-img {
+        font-size: 18px;
+    }
+    
+    .taskbar-icon {
+        padding: 4px 4px;
+        min-width: 28px;
+    }
+    
+    .taskbar-icons-container {
+        gap: 4px;
+    }
+}
+/* utility */
+.hidden {
+    display: none !important;
+}
