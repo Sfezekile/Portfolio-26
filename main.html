@@ -36,7 +36,7 @@
                         <i class="ri-google-fill"></i> 
                         <span>Google</span>
                     </div>
-                    <button class="close-btn" data-action="close"><i class="ri-close-line"></i></button>
+                    <button class="close-tab-btn" data-action="closeTab"><i class="ri-close-line"></i></button>
                 </div>
                 <div class="left-h">
 
@@ -181,7 +181,7 @@
         </div>
 
     </div>
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
     <script>
         // ---------- Generic window manager ----------
         // Handles opening a window from a taskbar icon (data-app="X" -> #win-X)
@@ -209,6 +209,102 @@
                 win.classList.toggle('maximized');
             });
             win.addEventListener('mousedown', () => bringToFront(win));
+        });
+
+        // Window control buttons (close, minimize, maximize)
+        document.querySelectorAll('.window-control button').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const action = this.dataset.action;
+                const winEl = this.closest('.window');
+                if (!winEl) return;
+                const id = winEl.id.replace('win-', '');
+                if (action === 'close') {
+                    closeWindow(id);
+                } else if (action === 'minimize') {
+                    // minimize = close but keep in taskbar? Actually we just close for demo
+                    // But for better UX, we can hide it but keep it "open" in taskbar.
+                    // Let's implement minimize as hide but keep state open.
+                    const win = windows[id];
+                    if (win) {
+                        win.element.style.display = 'none';
+                        win.element.classList.remove('active');
+                        // keep win.open = true so it stays in taskbar
+                        updateTaskbar();
+                        // focus another window
+                        const openWins = Object.entries(windows).filter(([k, v]) => v.open && v.element.style.display !== 'none');
+                        if (openWins.length > 0) {
+                            focusWindow(openWins[0][0]);
+                        } else {
+                            activeWindowId = null;
+                        }
+                    }
+                } else if (action === 'maximize') {
+                    const rect = winEl.getBoundingClientRect();
+                    if (winEl.style.width === '100%' || winEl.style.width === '100vw') {
+                        // restore
+                        winEl.style.width = winEl.dataset.prevWidth || '500px';
+                        winEl.style.height = winEl.dataset.prevHeight || '350px';
+                        winEl.style.top = winEl.dataset.prevTop || '80px';
+                        winEl.style.left = winEl.dataset.prevLeft || '100px';
+                    } else {
+                        // save current
+                        winEl.dataset.prevWidth = winEl.style.width || '500px';
+                        winEl.dataset.prevHeight = winEl.style.height || '350px';
+                        winEl.dataset.prevTop = winEl.style.top || '80px';
+                        winEl.dataset.prevLeft = winEl.style.left || '100px';
+                        winEl.style.width = '100%';
+                        winEl.style.height = 'calc(100% - 90px)';
+                        winEl.style.top = '30px';
+                        winEl.style.left = '0';
+                        winEl.style.border = none;
+                        winEl.style.borderRadius = '0';
+                    }
+                }
+            });
+        });
+        // ---- drag windows ----
+        function makeDraggable(winEl) {
+            const header = winEl.querySelector('.window-header');
+            let isDragging = false, offsetX = 0, offsetY = 0;
+
+            header.addEventListener('mousedown', function (e) {
+                if (e.target.closest('.window-controls')) return;
+                isDragging = true;
+                const rect = winEl.getBoundingClientRect();
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+                winEl.style.cursor = 'grabbing';
+                // bring to front on drag start
+                const id = winEl.id.replace('win-', '');
+                if (windows[id] && windows[id].open) focusWindow(id);
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (!isDragging) return;
+                let left = e.clientX - offsetX;
+                let top = e.clientY - offsetY;
+                // clamp to viewport
+                left = Math.max(0, Math.min(left, window.innerWidth - winEl.offsetWidth));
+                top = Math.max(0, Math.min(top, window.innerHeight - winEl.offsetHeight - 50));
+                winEl.style.left = left + 'px';
+                winEl.style.top = top + 'px';
+            });
+
+            document.addEventListener('mouseup', function () {
+                if (isDragging) {
+                    isDragging = false;
+                    winEl.style.cursor = '';
+                }
+            });
+        }
+        // ---- init all windows ----
+        document.querySelectorAll('.window').forEach(win => {
+            makeDraggable(win);
+            // add resize handle (basic)
+            // (native resize is enabled via CSS resize:both, but we also need to handle it)
+            // For simplicity we just rely on CSS resize.
         });
 
         let zCounter = 10;
