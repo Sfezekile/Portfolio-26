@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyOS - Portfolio</title>
     <link rel="stylesheet" href="./Style/main-style.css">
-    <link rel="stylesheet" href="./File Finder/window-style.css">
-    <link rel="stylesheet" href="./File Finder/browser.css">
+    <link rel="stylesheet" href="./Style/window-style.css">
+    <link rel="stylesheet" href="./Style/browser.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -50,7 +50,7 @@
                         <button class="close-tab-btn" data-tab="tab-2"><i class="ri-close-line"></i></button>
                     </div>
                 </div>
-                
+                <div class="left-h"></div>
                 <div class="window-control">
                     <button class="min-btn" data-action="minimize">─</button>
                     <button class="max-btn" data-action="maximize"><i class="ri-square-line"></i></button>
@@ -62,22 +62,33 @@
                 <button class="prev-btn"><i class="ri-arrow-right-s-line"></i></button>
                 <button class="reload-btn" onclick="goHome()"><i class="ri-home-line"></i></button>
                 <div class="tab-path">
-                    <p>https://<span>www.<span class="path-name">portfolio-26</span></span>/manal</p>
+                    <p>https://<span>www.<span class="path-name">portfolio-26</span></span>/manual</p>
                 </div>
             </div>
             <div class="browser-body">
                 <!-- TAB 1 - Manual Page -->
                 <div class="content" id="manualPage" style="display:flex;">
                     <div class="content-title">
-                        <span>Portfolio</span>
+                        <p>Dev.</p>
+                        <span>Portfolio </br>Manual</span>
                     </div>
-                    <div class="search-bar">
+                    <div class="blank"></div>
+
+                    <div class="content-body">
+                        
+                        <p>MyOS Portfolio is a unique, operating-system-inspired portfolio website designed to showcase my skills, creativity, and continuous learning journey. Unlike traditional portfolios, MyOS simulates a desktop environment with windows, taskbars, and file navigation to provide an immersive and memorable experience for visitors.</p>
+                    </div>
+                    <!-- <div class="search-bar">
                         <i class="ri-search-line"></i>
                         <input type="search" name="" id="projectSearch" placeholder="Search Projects..." oninput="filterProjects()">
-                    </div>
+                    </div> -->
                     <div class="search-cat">
-                        <button onclick="OpenPersonPro()"> How It Works</button>
+                        <a href="#how-it-works"> How It Works</a>
                         <button id="projectListBtn">Project Repos</button>
+                    </div>
+
+                    <div class="section" id="how-it-works">
+
                     </div>
                 </div>
                 <!-- TAB 2 - Projects Page -->

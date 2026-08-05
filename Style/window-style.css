@@ -144,7 +144,7 @@ body {
     padding: 0;
     overflow: hidden;
 }
-.window-body, .browser-body {
+.window-body {
     flex: 1;
     padding: 16px;
     background: white;
