@@ -7,6 +7,7 @@
     <title>MyOS - Portfolio</title>
     <link rel="stylesheet" href="main-style.css">
     <link rel="stylesheet" href="./File Finder/window-style.css">
+    <link rel="stylesheet" href="./File Finder/browser.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -28,49 +29,72 @@
 
         <!-- WINDOWS (pop-ups) -->
 
-        <!-- Explorer Window -->
-        <div id="win-browser" class="window" style="width:880px; height:520px; top:70px; left:80px; display:none;">
+        <!-- Browser Window -->
+        <div id="win-browser" class="window" style="width:880px; height:520px; top:70px; left:80px; display:block;">
             <div class="window-header" style="background: var(--black); height: 40px; padding: 4px 12px 0px 12px; border: none;">
                 <div class="window-tab">
-                    <div class="tab-n">
-                        <i class="ri-google-fill"></i> 
-                        <span>Google</span>
+                    <!-- Tab-1 is always visible -->
+                    <div class="tab active" id="tab-1">
+                        <div class="tab-n">
+                            <i class="ri-google-fill"></i> 
+                            <span>Manual</span>
+                        </div>
+                        <button class="close-tab-btn" data-tab="tab-1"><i class="ri-close-line"></i></button>
                     </div>
-                    <button class="close-tab-btn" data-action="closeTab"><i class="ri-close-line"></i></button>
+                    <!-- Tab-2 starts hidden -->
+                    <div class="tab" id="tab-2" style="display:none;">
+                        <div class="tab-n">
+                            <i class="ri-lists-fill"></i> 
+                            <span>Projects List</span>
+                        </div>
+                        <button class="close-tab-btn" data-tab="tab-2"><i class="ri-close-line"></i></button>
+                    </div>
                 </div>
-                <div class="left-h">
-
-                </div>
+                
                 <div class="window-control">
                     <button class="min-btn" data-action="minimize">─</button>
                     <button class="max-btn" data-action="maximize"><i class="ri-square-line"></i></button>
                     <button class="close-btn" data-action="close"><i class="ri-close-line"></i></button>
                 </div>
             </div>
+            <div class="tab-control">
+                <button class="back-btn"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="prev-btn"><i class="ri-arrow-right-s-line"></i></button>
+                <button class="reload-btn" onclick="goHome()"><i class="ri-home-line"></i></button>
+                <div class="tab-path">
+                    <p>https://<span>www.<span class="path-name">portfolio-26</span></span>/manal</p>
+                </div>
+            </div>
             <div class="browser-body">
-                <div class="content">
+                <!-- TAB 1 - Manual Page -->
+                <div class="content" id="manualPage" style="display:flex;">
                     <div class="content-title">
                         <span>Portfolio</span>
                     </div>
                     <div class="search-bar">
                         <i class="ri-search-line"></i>
-                        <input type="search" name="" id="projectSearch">
+                        <input type="search" name="" id="projectSearch" placeholder="Search Projects..." oninput="filterProjects()">
                     </div>
                     <div class="search-cat">
-                        <button onclick="OpenPersonPro()">Personal Projects</button>
-                        <button onclick="OpenMiniPro()">Mini Projects</button>
+                        <button onclick="OpenPersonPro()"> How It Works</button>
+                        <button id="projectListBtn">Project Repos</button>
                     </div>
+                </div>
+                <!-- TAB 2 - Projects Page -->
+                <div class="content" id="projectsPage" style="display:none;">
+                    <div class="title">
+                        <span>Projects</span>
+                    </div>
+                    <div class="project-list"></div>
                 </div>
             </div>
         </div>
 
-        <!-- File Finder Window (folded in from index.html) -->
+        <!-- File Finder Window -->
         <div id="win-filefinder" class="window" style="width:600px; height:400px; top:90px; left:140px; display:none;">
             <div class="window-header">
                 <span class="window-title"><i class="ri-folder-6-fill"></i> File Finder</span>
-                <div class="left-h">
-
-                </div>
+                <div class="left-h"></div>
                 <div class="window-control">
                     <button class="min-btn" data-action="minimize">─</button>
                     <button class="max-btn" data-action="maximize"><i class="ri-square-line"></i></button>
@@ -82,8 +106,7 @@
                     <ul>
                         <li>
                             <ul class="sub-nav">
-                                <li><button onclick="OpenHomeModel()"><i class="ri-computer-fill"></i> Home</button>
-                                </li>
+                                <li><button onclick="OpenHomeModel()"><i class="ri-computer-fill"></i> Home</button></li>
                             </ul>
                         </li>
                     </ul>
@@ -91,12 +114,9 @@
                         <span class="sub-header">Projects</span>
                         <li>
                             <ul class="sub-nav">
-                                <li><button onclick="OpenMiniModel()"><i class="ri-folder-6-fill"></i> Mini
-                                        Projects</button></li>
-                                <li><button onclick="OpenCaseModel()"><i class="ri-folder-6-fill"></i> Case
-                                        Studies</button></li>
-                                <li><button onclick="OpenResearchModel()"><i class="ri-folder-6-fill"></i>
-                                        Research</button></li>
+                                <li><button onclick="OpenMiniModel()"><i class="ri-folder-6-fill"></i> Mini Projects</button></li>
+                                <li><button onclick="OpenCaseModel()"><i class="ri-folder-6-fill"></i> Case Studies</button></li>
+                                <li><button onclick="OpenResearchModel()"><i class="ri-folder-6-fill"></i> Research</button></li>
                             </ul>
                         </li>
                     </ul>
@@ -145,7 +165,7 @@
                     <div class="icon-img"><i class="ri-folder-6-fill" style="font-size: 35px;"></i></div>
                 </div>
                 <div class="taskbar-icon" data-app="browser">
-                    <span class="taskbar-label">File Finder</span>
+                    <span class="taskbar-label">Browser</span>
                     <div class="icon-img"><i class="ri-google-fill" style="font-size: 35px;"></i></div>
                 </div>
                 <div class="taskbar-icon" data-app="explorer">
@@ -167,256 +187,241 @@
                     <div class="icon-img">
                         <img style="height: 40px; width: 40px" src="./Icons/mysql.svg" alt="">
                     </div>
-                    <!-- <div class="icon-active"></div> -->
                 </div>
                 <div class="taskbar-icon" data-app="explorer">
                     <span class="taskbar-label">MySQL Workbanch</span>
                     <div class="icon-img">
                         <img src="./Icons/figma.svg" alt="">
                     </div>
-                    <!-- <div class="icon-active"></div> -->
                 </div>
 
             </div>
         </div>
 
     </div>
-    <!-- <script src="app.js"></script> -->
+    <script src="app.js"></script>
     <script>
-        // ---------- Generic window manager ----------
-        // Handles opening a window from a taskbar icon (data-app="X" -> #win-X)
-        // and the shared minimize/maximize/close controls on every .window.
+        // Tab state management
+        let activeTabs = ['tab-1'];
+        let currentTab = 'tab-1';
+        
+        // Sample project data
+        const tabsBrowser = {
+            'project1': { fileName: 'Project Alpha', image: 'https://via.placeholder.com/150/333/fff?text=Alpha' },
+            'project2': { fileName: 'Project Beta', image: 'https://via.placeholder.com/150/444/fff?text=Beta' },
+            'project3': { fileName: 'Project Gamma', image: 'https://via.placeholder.com/150/555/fff?text=Gamma' }
+        };
 
-        document.querySelectorAll('.taskbar-icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                const app = icon.getAttribute('data-app');
-                const win = document.getElementById('win-' + app);
-                if (win) {
-                    win.style.display = 'flex';
-                    bringToFront(win);
+        // Function to show only one content page
+        function ShowOnly(id) {
+            const manualPage = document.getElementById('manualPage');
+            const projectsPage = document.getElementById('projectsPage');
+            
+            if (id === 'manualPage') {
+                manualPage.style.display = 'flex';
+                projectsPage.style.display = 'none';
+            } else if (id === 'projectsPage') {
+                manualPage.style.display = 'none';
+                projectsPage.style.display = 'flex';
+            }
+        }
+
+        // Function to open Tab-2 (Projects List) - MAIN FUNCTION
+        function openProjectsTab() {
+            console.log('openProjectsTab called');
+            
+            // Check if tab-2 is already open
+            if (activeTabs.includes('tab-2')) {
+                console.log('Tab-2 already open, switching to it');
+                switchToTab('tab-2');
+                return;
+            }
+
+            // Add tab-2 to active tabs
+            activeTabs.push('tab-2');
+            console.log('Active tabs:', activeTabs);
+            
+            // Show tab-2 in the tab bar - THIS MAKES IT APPEAR NEXT TO TAB-1
+            const tab2 = document.getElementById('tab-2');
+            tab2.style.display = 'flex';
+            console.log('Tab-2 display set to flex');
+            
+            // Switch to tab-2
+            switchToTab('tab-2');
+            
+            // Load projects
+            loadProjects();
+        }
+
+        // Function to load projects in Tab-2
+        function loadProjects() {
+            console.log('Loading projects');
+            ShowOnly('projectsPage');
+            document.querySelector('.path-name').textContent = 'projects.com';
+            let html = '';
+            for (const key in tabsBrowser) {
+                const project = tabsBrowser[key];
+                html += `
+                    <div class="item" style="cursor: pointer; background-image: url('${project.image}'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;">
+                        ${project.fileName}
+                    </div>
+                `;
+            }
+            document.getElementsByClassName('project-list')[0].innerHTML = html;
+        }
+
+        // Function to switch to a specific tab
+        function switchToTab(tabId) {
+            console.log('Switching to tab:', tabId);
+            currentTab = tabId;
+            
+            // Update tab styles - highlight active tab
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.id === tabId) {
+                    tab.classList.add('active');
                 }
             });
-        });
+            
+            // Show corresponding content
+            if (tabId === 'tab-1') {
+                ShowOnly('manualPage');
+                document.querySelector('.path-name').textContent = 'portfolio-26';
+            } else if (tabId === 'tab-2') {
+                loadProjects();
+            }
+        }
 
-        document.querySelectorAll('.window').forEach(win => {
-            win.querySelector('.close-btn')?.addEventListener('click', () => {
-                win.style.display = 'none';
-            });
-            win.querySelector('.min-btn')?.addEventListener('click', () => {
-                win.style.display = 'none';
-            });
-            win.querySelector('.max-btn')?.addEventListener('click', () => {
-                win.classList.toggle('maximized');
-            });
-            win.addEventListener('mousedown', () => bringToFront(win));
-        });
+        // Function to close a tab
+        function closeTab(tabId) {
+            console.log('closeTab called for:', tabId);
+            console.log('Active tabs before:', activeTabs);
+            
+            // Don't close if only one tab remains
+            if (activeTabs.length <= 1) {
+                console.log('Cannot close last tab');
+                return;
+            }
+            
+            // Remove tab from active tabs
+            const index = activeTabs.indexOf(tabId);
+            if (index > -1) {
+                activeTabs.splice(index, 1);
+            }
+            
+            // Hide the tab
+            document.getElementById(tabId).style.display = 'none';
+            
+            // If closing current tab, switch to another tab
+            if (currentTab === tabId) {
+                const nextTab = activeTabs[0] || 'tab-1';
+                switchToTab(nextTab);
+            }
+            
+            console.log('Active tabs after:', activeTabs);
+        }
 
-        // Window control buttons (close, minimize, maximize)
-        document.querySelectorAll('.window-control button').forEach(btn => {
-            btn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                const action = this.dataset.action;
-                const winEl = this.closest('.window');
-                if (!winEl) return;
-                const id = winEl.id.replace('win-', '');
-                if (action === 'close') {
-                    closeWindow(id);
-                } else if (action === 'minimize') {
-                    // minimize = close but keep in taskbar? Actually we just close for demo
-                    // But for better UX, we can hide it but keep it "open" in taskbar.
-                    // Let's implement minimize as hide but keep state open.
-                    const win = windows[id];
-                    if (win) {
-                        win.element.style.display = 'none';
-                        win.element.classList.remove('active');
-                        // keep win.open = true so it stays in taskbar
-                        updateTaskbar();
-                        // focus another window
-                        const openWins = Object.entries(windows).filter(([k, v]) => v.open && v.element.style.display !== 'none');
-                        if (openWins.length > 0) {
-                            focusWindow(openWins[0][0]);
-                        } else {
-                            activeWindowId = null;
+        // Function to go home (Tab-1)
+        function goHome() {
+            console.log('goHome called');
+            if (!activeTabs.includes('tab-1')) {
+                activeTabs.push('tab-1');
+                document.getElementById('tab-1').style.display = 'flex';
+            }
+            switchToTab('tab-1');
+        }
+
+        // CLOCK FUNCTION
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}`;
+        }
+
+        // ===== EVENT LISTENERS SETUP =====
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded - setting up event listeners');
+            
+            // 1. Setup Project Repos button click
+            const projectListBtn = document.getElementById('projectListBtn');
+            if (projectListBtn) {
+                console.log('Project Repos button found');
+                projectListBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Project Repos button clicked!');
+                    openProjectsTab();
+                });
+            } else {
+                console.log('ERROR: Project Repos button NOT found!');
+            }
+            
+            // 2. Setup tab click events for switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    if (e.target.closest('.close-tab-btn')) {
+                        console.log('Close button clicked, not switching tab');
+                        return;
+                    }
+                    console.log('Tab clicked:', this.id);
+                    switchToTab(this.id);
+                });
+            });
+            
+            // 3. Setup close tab button events
+            document.querySelectorAll('.close-tab-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const tabId = this.getAttribute('data-tab');
+                    console.log('Close button clicked for tab:', tabId);
+                    closeTab(tabId);
+                });
+            });
+            
+            // 4. Setup window close button
+            const closeWindowBtn = document.querySelector('#win-browser .window-control .close-btn');
+            if (closeWindowBtn) {
+                closeWindowBtn.addEventListener('click', function() {
+                    console.log('Window close button clicked');
+                    if (activeTabs.length === 1) {
+                        document.getElementById('win-browser').style.display = 'none';
+                    } else {
+                        // Close all tabs except the first one
+                        while (activeTabs.length > 1) {
+                            const tabToClose = activeTabs[activeTabs.length - 1];
+                            closeTab(tabToClose);
                         }
                     }
-                } else if (action === 'maximize') {
-                    const rect = winEl.getBoundingClientRect();
-                    if (winEl.style.width === '100%' || winEl.style.width === '100vw') {
-                        // restore
-                        winEl.style.width = winEl.dataset.prevWidth || '500px';
-                        winEl.style.height = winEl.dataset.prevHeight || '350px';
-                        winEl.style.top = winEl.dataset.prevTop || '80px';
-                        winEl.style.left = winEl.dataset.prevLeft || '100px';
-                    } else {
-                        // save current
-                        winEl.dataset.prevWidth = winEl.style.width || '500px';
-                        winEl.dataset.prevHeight = winEl.style.height || '350px';
-                        winEl.dataset.prevTop = winEl.style.top || '80px';
-                        winEl.dataset.prevLeft = winEl.style.left || '100px';
-                        winEl.style.width = '100%';
-                        winEl.style.height = 'calc(100% - 90px)';
-                        winEl.style.top = '30px';
-                        winEl.style.left = '0';
-                        winEl.style.border = none;
-                        winEl.style.borderRadius = '0';
-                    }
-                }
-            });
-        });
-        // ---- drag windows ----
-        function makeDraggable(winEl) {
-            const header = winEl.querySelector('.window-header');
-            let isDragging = false, offsetX = 0, offsetY = 0;
-
-            header.addEventListener('mousedown', function (e) {
-                if (e.target.closest('.window-controls')) return;
-                isDragging = true;
-                const rect = winEl.getBoundingClientRect();
-                offsetX = e.clientX - rect.left;
-                offsetY = e.clientY - rect.top;
-                winEl.style.cursor = 'grabbing';
-                // bring to front on drag start
-                const id = winEl.id.replace('win-', '');
-                if (windows[id] && windows[id].open) focusWindow(id);
-                e.preventDefault();
-            });
-
-            document.addEventListener('mousemove', function (e) {
-                if (!isDragging) return;
-                let left = e.clientX - offsetX;
-                let top = e.clientY - offsetY;
-                // clamp to viewport
-                left = Math.max(0, Math.min(left, window.innerWidth - winEl.offsetWidth));
-                top = Math.max(0, Math.min(top, window.innerHeight - winEl.offsetHeight - 50));
-                winEl.style.left = left + 'px';
-                winEl.style.top = top + 'px';
-            });
-
-            document.addEventListener('mouseup', function () {
-                if (isDragging) {
-                    isDragging = false;
-                    winEl.style.cursor = '';
-                }
-            });
-        }
-        // ---- init all windows ----
-        document.querySelectorAll('.window').forEach(win => {
-            makeDraggable(win);
-            // add resize handle (basic)
-            // (native resize is enabled via CSS resize:both, but we also need to handle it)
-            // For simplicity we just rely on CSS resize.
+                });
+            }
+            
+            // 5. Initialize - only tab-1 visible
+            document.getElementById('tab-1').style.display = 'flex';
+            document.getElementById('tab-2').style.display = 'none';
+            switchToTab('tab-1');
+            
+            // 6. Start clock
+            updateClock();
+            setInterval(updateClock, 1000);
+            
+            console.log('Initialization complete!');
         });
 
-        let zCounter = 10;
-        function bringToFront(win) {
-            zCounter++;
-            win.style.zIndex = zCounter;
-        }
-
-        // ---------- File Finder logic (scoped with  prefix) ----------
-        const miniProjectFolder = {
-            folder_1: {
-                icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/calendar-icon-svg-download-png-8756633.png?f=webp&w=256',
-                fileName: 'Calendar-UI',
-                link: 'https://sfezekile.github.io/Calendar-UI/',
-            },
-            folder_2: {
-                icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/music-player-icon-svg-download-png-10592997.png?f=webp&w=256',
-                fileName: 'MiniPocket-Player',
-            },
-        };
-        const caseFolder = {
-            folder_1: { icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256', fileName: 'Product Card - Case Study', gitLink: 'https://github.com/Sfezekile/case-study-card-1' },
-            folder_2: { icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256', fileName: 'Profile Card - Case Study', gitLink: 'https://github.com/Sfezekile/case-study-card-2' },
-            folder_3: { icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256', fileName: 'Animation in CSS - Case Study', gitLink: 'https://github.com/Sfezekile/Case-study-animation-1' },
-            folder_4: { icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256', fileName: 'Coffee Customization Card - Case Study', gitLink: 'https://github.com/Sfezekile/case-study-card-3' },
-            folder_5: { icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256', fileName: 'Status Indicator Component: A UI/UX Case Study', gitLink: 'https://github.com/Sfezekile/case-study-btn-2' },
-            folder_6: { icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256', fileName: 'Button Design Case Study', gitLink: 'https://github.com/Sfezekile/case-study-btn-1' },
-        };
-        const researchFolder = {
-            folder_1: {
-                icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256',
-                fileName: 'Plants in Space',
-            },
-            folder_2: {
-                icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256',
-                fileName: 'e-com UI',
-            },
-            folder_3: {
-                icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256',
-                fileName: 'React Apps',
-            },
-            folder_4: {
-                icon: 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256',
-                fileName: 'Landing Page Designs',
-            },
-        };
-
-        function ShowOnly(id) {
-            ['home', 'miniProject', 'caseStudies', 'research'].forEach(sectionId => {
-                document.getElementById(sectionId).style.display = (sectionId === id) ? 'grid' : 'none';
-            });
-        }
-
-        function OpenHomeModel() {
-            ShowOnly('home');
-            document.querySelector('.page-path').textContent = 'Home';
-        }
-
-        function OpenMiniModel() {
-            ShowOnly('miniProject');
-            document.querySelector('.page-path').textContent = 'Mini Projects';
-            let html = '';
-            for (const key in miniProjectFolder) {
-                const project = miniProjectFolder[key];
-                html += `
-                <a href="${project.link || project.gitLink || '#'}" target="_blank" class="file">
-                    <div class="folder-img"><img src="${project.icon}"></div>
-                    <span>${project.fileName}</span>
-                </a>`;
-            }
-            document.getElementById('miniProject').innerHTML = html;
-        }
-
-        function OpenCaseModel() {
-            ShowOnly('caseStudies');
-            document.querySelector('.page-path').textContent = 'Case Studies';
-            let html = '';
-            for (const key in caseFolder) {
-                const project = caseFolder[key];
-                html += `
-                <a href="${project.gitLink}" target="_blank" class="file">
-                    <div class="folder-img"><img src="${project.icon}"></div>
-                    <span>${project.fileName}</span>
-                </a>`;
-            }
-            document.getElementById('caseStudies').innerHTML = html;
-        }
-
-        function OpenResearchModel() {
-            ShowOnly('research');
-            document.querySelector('.page-path').textContent = 'Research';
-            let html = '';
-            for (const key in researchFolder) {
-                const project = researchFolder[key];
-                html += `
-                <a href="${project.gitLink}" target="_blank" class="file">
-                    <div class="folder-img"><img src="${project.icon}"></div>
-                    <span>${project.fileName}</span>
-                </a>`;
-            }
-            document.getElementById('research').innerHTML = html;
-        }
-
-        // Live clock (menubar)
-        function UpdateClock() {
-            const el = document.getElementById('clock');
-            if (el) {
-                el.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            }
-        }
-        UpdateClock();
-        setInterval(UpdateClock, 1000 * 30);
+        // Make functions globally accessible
+        window.openProjectsTab = openProjectsTab;
+        window.goHome = goHome;
+        window.closeTab = closeTab;
+        window.switchToTab = switchToTab;
+        window.ShowOnly = ShowOnly;
+        window.OpenPersonPro = OpenPersonPro;
+        window.OpenMiniPro = OpenMiniPro;
+        window.OpenHomeModel = OpenHomeModel;
+        window.OpenMiniModel = OpenMiniModel;
+        window.OpenCaseModel = OpenCaseModel;
+        window.OpenResearchModel = OpenResearchModel;
+        
+        console.log('All functions exposed globally');
     </script>
 
 </body>
