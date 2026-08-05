@@ -213,7 +213,7 @@
         };
 
         // Function to show only one content page
-        function ShowOnly(id) {
+        function ShowOnlyB(id) {
             const manualPage = document.getElementById('manualPage');
             const projectsPage = document.getElementById('projectsPage');
             
@@ -256,7 +256,7 @@
         // Function to load projects in Tab-2
         function loadProjects() {
             console.log('Loading projects');
-            ShowOnly('projectsPage');
+            ShowOnlyB('projectsPage');
             document.querySelector('.path-name').textContent = 'projects.com';
             let html = '';
             for (const key in tabsBrowser) {
@@ -285,7 +285,7 @@
             
             // Show corresponding content
             if (tabId === 'tab-1') {
-                ShowOnly('manualPage');
+                ShowOnlyB('manualPage');
                 document.querySelector('.path-name').textContent = 'portfolio-26';
             } else if (tabId === 'tab-2') {
                 loadProjects();
@@ -413,7 +413,7 @@
         window.goHome = goHome;
         window.closeTab = closeTab;
         window.switchToTab = switchToTab;
-        window.ShowOnly = ShowOnly;
+        window.ShowOnlyB = ShowOnlyB;
         window.OpenPersonPro = OpenPersonPro;
         window.OpenMiniPro = OpenMiniPro;
         window.OpenHomeModel = OpenHomeModel;
