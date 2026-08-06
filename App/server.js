@@ -26,6 +26,7 @@ async function fetchGitHubRepos() {
 // Function to filter and organize repos by category
 function categorizeRepos(repos) {
     const categories = {
+        all: repos,
         miniProjects: [],
         caseStudies: [],
         research: [],
@@ -64,5 +65,27 @@ function createRepoHTML(repo) {
             <span>${repoName}</span>
             ${repo.description ? `<p class="repo-desc">${repo.description}</p>` : ''}
         </a>
+    `;
+}
+
+// Function to create HTML for a repository
+function createProjRepoHTML(repo) {
+    const icon = 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256';
+    const repoName = repo.name.replace(/-/g, ' ').replace(/_/g, ' ');
+    const repoLanguage = repo.language ? `<span class="repo-language">${repo.language}</span>` : '';
+    const repoUpdated = repo.updated ? `<span class="repo-updated">${repo.updated_at}</span>` : '';
+    const homepageLink = repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener" class="repo-homepage">Live Demo</a>` : '';
+
+    return `
+        <div class="repo-row repo-card">
+            <a href="${repo.html_url}" target="_blank" rel="noopener" class="repo-link">
+                <span class="repo-name">${repoName}</span>
+                <div class="repo-meta">
+                    ${repoLanguage}
+                    ${repoUpdated}
+                </div>
+            </a>
+            ${homepageLink}
+        </div>
     `;
 }

@@ -322,6 +322,7 @@ li button:hover {
     transition: all 0.2s ease-in;
     background: var(--gray);
 }
+
 .folder-img {
     font-size: 100px;
     line-height: 0.75;

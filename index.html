@@ -82,10 +82,6 @@
                             simulates a desktop environment with windows, taskbars, and file navigation to provide an
                             immersive and memorable experience for visitors.</p>
                     </div>
-                    <!-- <div class="search-bar">
-                        <i class="ri-search-line"></i>
-                        <input type="search" name="" id="projectSearch" placeholder="Search Projects..." oninput="filterProjects()">
-                    </div> -->
                     <div class="search-cat">
                         <a href="#how-it-works"> How It Works</a>
                         <button id="projectListBtn">Project Repos</button>
@@ -279,9 +275,14 @@
                 <!-- TAB 2 - Projects Page -->
                 <div class="content" id="projectsPage" style="display:none;">
                     <div class="title">
-                        <span>Projects</span>
+                        <span>Projects Repository</span>
                     </div>
-                    <div class="project-list"></div>
+                    <div class="content-project">
+                        <div class="profile">
+                            <img src="https://avatars.githubusercontent.com/u/194355898?v=4" alt="">
+                        </div>
+                        <div class="project-list"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -455,19 +456,30 @@
         }
 
         // Function to load projects in Tab-2
-        function loadProjects() {
+        async function loadProjects() {
             console.log('Loading projects');
             ShowOnlyB('projectsPage');
             document.querySelector('.path-name').textContent = 'projects.com';
+
+            const repos = await fetchGitHubRepos();
+            const categorized = categorizeRepos(repos);
+
             let html = '';
-            for (const key in tabsBrowser) {
-                const project = tabsBrowser[key];
-                html += `
-                    <div class="item" style="cursor: pointer; background-image: url('${project.image}'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;">
-                        ${project.fileName}
-                    </div>
-                `;
+            categorized.all.forEach(repo => {
+                html += createProjRepoHTML(repo);
+            });
+            // If no repos found, show fallback content
+            if (!html) {
+                html = '<p>No mini projects found on GitHub.</p>';
             }
+            // for (const key in tabsBrowser) {
+            //     const project = tabsBrowser[key];
+            //     html += `
+            //         <div class="item" style="cursor: pointer; background-image: url('${project.image}'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;">
+            //             ${project.fileName}
+            //         </div>
+            //     `;
+            // }
             document.getElementsByClassName('project-list')[0].innerHTML = html;
         }
 
