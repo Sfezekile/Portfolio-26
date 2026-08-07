@@ -1,0 +1,30 @@
+:root {
+    --black: #1a1a1a;
+    --white: #fff;
+    --gray: rgba(255,255,255,0.15);
+    --gray-2: #c1c1c1;
+    --sub-header: #818080;
+    --bg: #333;
+    --bg-2: #222;
+    --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
+}
+
+.Window-menu {
+    position: absolute;
+    bottom: 70px;
+    left: 25%;
+    right: 10%;
+    width: 50%;
+    height: 70%;
+    background: rgba(255, 255, 255, 0.692);
+    backdrop-filter: blur(35px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    z-index: 1000;
+    color: var(--black);
+    gap: 8px;
+}
