@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyOS - Portfolio</title>
+    <title>SfezekileDev - Portfolio</title>
     <link rel="stylesheet" href="./Style/main-style.css">
     <link rel="stylesheet" href="./Style/window-style.css">
     <link rel="stylesheet" href="./Style/browser.css">
@@ -19,7 +19,7 @@
 
         <!-- MENUBAR -->
         <div id="menubar">
-            <button><i class="ri-user-fill"></i> User Name</button>
+            <button><i class="ri-user-fill"></i> SfezekileDev</button>
             <div class="menubar-clock" id="clock">12:00</div>
             <div class="menubar-status">
                 <div class="network-icon"></div>
@@ -29,9 +29,102 @@
         </div>
 
         <!-- WINDOWS (pop-ups) -->
-         <section class="Window-menu">
-            <span>No Data</span>
-         </section>
+        <section class="Window-menu" style="display:none;">
+            <header>
+                <span>Sfezekile Dev</span>
+            </header>
+            <div class="menu-content">
+                <!-- <div class="top-section">
+                    <div class="profile">
+                        <img src="https://avatars.githubusercontent.com/u/194355898?v=4" alt="">
+                    </div>
+                    <div class="stats-section">
+                        <div class="stat">
+                            <p class="stat-label">Projects</p>
+                            <div class="stat-container">
+                                <div class="status-bar">
+                                    <div class="status-bar-fill"></div>
+                                </div>
+                                <p class="stat-value">5</p>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <p class="stat-label">Skills</p>
+                            <div class="stat-container">
+                                <div class="status-bar">
+                                    <div class="status-bar-fill"></div>
+                                </div>
+                                <p class="stat-value">10</p>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <p class="stat-label">Projects</p>
+                            <div class="stat-container">
+                                <div class="status-bar">
+                                    <div class="status-bar-fill"></div>
+                                </div>
+                                <p class="stat-value">5</p>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <p class="stat-label">Skills</p>
+                            <div class="stat-container">
+                                <div class="status-bar">
+                                    <div class="status-bar-fill"></div>
+                                </div>
+                                <p class="stat-value">10</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mid-section">
+                    
+                </div> -->
+                <div class="left-content">
+                    <img src="https://avatars.githubusercontent.com/u/194355898?v=4" alt="">
+                </div>
+                <div class="right-content">
+                    <div class="top-content">
+                        <div class="inner-left-content">
+                            <div class="overview">
+                                <div class="title-section">
+                                    <span>Hello!</span>
+                                    <i class="ri-smile-fill"></i>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div class="edu-content">
+                                <h1>Education</h1>
+                                <ul>
+                                    <li><strong>University of XYZ</strong> - BSc in Computer Science (2018-2022)</li>
+                                    <li><strong>ABC Coding Bootcamp</strong> - Full Stack Web Development (2023)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="inner-right-content">
+                            <div class="skills">
+                                <div class="skill-section">
+                                    <span>Skills</span>
+                                </div>
+                                <div class="skill-grid">
+                                    <i class="ri-html5-line" id="html5"></i>
+                                    <i class="ri-css3-line" id="css3"></i>
+                                    <i class="ri-javascript-line" id="javascript"></i>
+                                    <i class="ri-github-line" id="github"></i>
+                                    <i class="ri-claude-fill" id="claude"></i>
+                                </div>
+                            </div>
+                            <div class="exper-content">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-content">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Browser Window -->
         <div id="win-browser" class="window" style="width:880px; height:520px; top:70px; left:80px; display:none;">
@@ -95,9 +188,9 @@
                         <!-- Purpose Section -->
                         <div class="manual-section">
                             <h2 class="section-title">Purpose & Philosophy</h2>
-                            
+
                             <h3 class="sub-title">What This Portfolio Represents</h3>
-                            
+
                             <div class="purpose-grid">
                                 <div class="purpose-card">
                                     <h4>Creativity & Innovation</h4>
@@ -107,7 +200,7 @@
                                         <li>Showing attention to detail and design sensibility</li>
                                     </ul>
                                 </div>
-                                
+
                                 <div class="purpose-card">
                                     <h4>Willingness to Learn</h4>
                                     <ul>
@@ -116,7 +209,7 @@
                                         <li>Continuously adding new features and improvements</li>
                                     </ul>
                                 </div>
-                                
+
                                 <div class="purpose-card">
                                     <h4>Progress Tracking</h4>
                                     <ul>
@@ -127,29 +220,31 @@
                                 </div>
                             </div>
                         </div>
-                    
+
                         <!-- Interface Components -->
                         <div class="manual-section">
                             <h2 class="section-title">Interface Components</h2>
-                            
+
                             <div class="component">
                                 <h3>1. Desktop Environment</h3>
                                 <ul>
                                     <li><strong>Wallpaper:</strong> Custom background creating OS atmosphere</li>
-                                    <li><strong>Interactive Elements:</strong> Clickable desktop icons (planned feature)</li>
+                                    <li><strong>Interactive Elements:</strong> Clickable desktop icons (planned feature)
+                                    </li>
                                     <li><strong>Responsive Design:</strong> Adapts to different screen sizes</li>
                                 </ul>
                             </div>
-                        
+
                             <div class="component">
                                 <h3>2. Menu Bar (Top Bar)</h3>
                                 <ul>
                                     <li><strong>User Name:</strong> Personal branding element</li>
                                     <li><strong>System Clock:</strong> Live time display updating every 30 seconds</li>
-                                    <li><strong>Status Icons:</strong> Network, volume, and battery indicators (visual only)</li>
+                                    <li><strong>Status Icons:</strong> Network, volume, and battery indicators (visual
+                                        only)</li>
                                 </ul>
                             </div>
-                        
+
                             <div class="component">
                                 <h3>3. Taskbar (Bottom Bar)</h3>
                                 <ul>
@@ -163,7 +258,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        
+
                             <div class="component">
                                 <h3>4. Window System</h3>
                                 <ul>
@@ -180,24 +275,25 @@
                                 </ul>
                             </div>
                         </div>
-                    
+
                         <!-- Applications Section -->
                         <div class="manual-section">
                             <h2 class="section-title">Applications</h2>
-                            
+
                             <div class="app-card">
                                 <h3>File Finder (File Explorer)</h3>
                                 <p>A full-featured file explorer simulation that organizes projects into categories:</p>
-                                
+
                                 <h4>Navigation:</h4>
                                 <ul>
-                                    <li><strong>Sidebar Navigation:</strong> Quick access to Home, Mini Projects, Case Studies, and Research</li>
+                                    <li><strong>Sidebar Navigation:</strong> Quick access to Home, Mini Projects, Case
+                                        Studies, and Research</li>
                                     <li><strong>Breadcrumb Trail:</strong> Shows current location</li>
                                     <li><strong>Back/Forward/Refresh:</strong> Standard navigation controls</li>
                                 </ul>
-                                
+
                                 <h4>Categories:</h4>
-                                
+
                                 <div class="category">
                                     <h5>Mini Projects</h5>
                                     <ul>
@@ -205,7 +301,7 @@
                                         <li><strong>MiniPocket-Player:</strong> A music player concept</li>
                                     </ul>
                                 </div>
-                                
+
                                 <div class="category">
                                     <h5>Case Studies (6 Projects)</h5>
                                     <ul>
@@ -217,7 +313,7 @@
                                         <li><strong>Button Design</strong> - Component analysis</li>
                                     </ul>
                                 </div>
-                                
+
                                 <div class="category">
                                     <h5>Research (4 Projects)</h5>
                                     <ul>
@@ -228,11 +324,11 @@
                                     </ul>
                                 </div>
                             </div>
-                        
+
                             <div class="app-card">
                                 <h3>Browser (Web Browser Simulation)</h3>
                                 <p>A browser-like interface with tabbed browsing functionality:</p>
-                                
+
                                 <h4>Tab Management:</h4>
                                 <ul>
                                     <li><strong>Multiple Tabs:</strong> Open and switch between tabs</li>
@@ -240,14 +336,14 @@
                                     <li><strong>Close Tabs:</strong> Close individual tabs (except the last one)</li>
                                     <li><strong>Visual Feedback:</strong> Active tab highlighted</li>
                                 </ul>
-                                
+
                                 <h4>Tab 1 - Manual Page:</h4>
                                 <ul>
                                     <li><strong>Title Section:</strong> "Dev. Portfolio Manual"</li>
                                     <li><strong>Quick Actions:</strong> "Project Repos" button opens Tab 2</li>
                                     <li><strong>Search Bar:</strong> Project search functionality (planned)</li>
                                 </ul>
-                                
+
                                 <h4>Tab 2 - Projects List:</h4>
                                 <ul>
                                     <li><strong>Grid Display:</strong> Projects shown in organized grid</li>
@@ -256,7 +352,7 @@
                                 </ul>
                             </div>
                         </div>
-                    
+
                         <!-- Status Section -->
                         <div class="manual-section status-section">
                             <div class="status-grid">
@@ -359,7 +455,7 @@
 
         <!-- TASKBAR -->
         <div id="taskbar">
-            <button id="start-btn">
+            <button id="start-btn" onclick="document.querySelector('.Window-menu').style.display = 'flex';">
                 <span>Me</span>
                 <div class="logo">🌐</div>
             </button>
