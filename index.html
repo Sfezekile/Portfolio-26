@@ -28,67 +28,114 @@
             </div>
         </div>
 
-        <!-- WINDOWS (pop-ups) -->
-        <section class="Window-menu" style="display:none;">
-            <header>
-                <span>Sfezekile Dev</span>
-            </header>
-            <div class="menu-content">
-                <div class="left-content">
-                    <img src="https://avatars.githubusercontent.com/u/194355898?v=4" alt="Sfezekile">
-                </div>
-                <div class="right-content">
-                    <div class="top-content">
-                        <div class="inner-left-content">
-                            <div class="overview">
-                                <div class="title-section">
-                                    <span>Hello!</span>
-                                    <i class="ri-smile-fill"></i>
-                                </div>
-                                <p>I'm Sfezekile — a self-taught developer and Software Engineering student building practical digital tools for small businesses. I turn client briefs into working products: booking sites, e-commerce catalogs, and project management apps. I also document the build process as speed-code content on LinkedIn.</p>
-                            </div>
-                            <div class="edu-content">
-                                <h1>Education</h1>
-                                <ul>
-                                    <li><strong>Eduvos</strong> — Software Engineering (in progress)</li>
-                                    <li><strong>Self-taught</strong> — HTML, CSS, JavaScript, MySQL</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="inner-right-content">
-                            <div class="skills">
-                                <div class="skill-section">
-                                    <span>Skills</span>
-                                </div>
-                                <div class="skill-grid">
-                                    <i class="ri-html5-line" id="html5" title="HTML5"></i>
-                                    <i class="ri-css3-line" id="css3" title="CSS3"></i>
-                                    <i class="ri-javascript-line" id="javascript" title="JavaScript"></i>
-                                    <i class="ri-github-line" id="github" title="GitHub"></i>
-                                    <i class="ri-claude-fill" id="claude" title="Claude"></i>
-                                </div>
-                            </div>
-                            <div class="exper-content">
-                                <div class="skill-section">
-                                    <span>Experience</span>
-                                </div>
-                                <ul>
-                                    <li><strong>Momentum</strong> — Multi-mode project management app (Kanban, Calendar, Gantt)</li>
-                                    <li><strong>Devotional Shelf</strong> — Bible study site for Rhema Bible Church North</li>
-                                    <li><strong>Macrozone</strong> — Mobile app in React Native / Expo</li>
-                                    <li><strong>Client sites</strong> — Kiln &amp; Clay, Atelier Soleil, plumbing &amp; personal trainer booking pages</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom-content">
-                        <div class="skill-section">
-                            <span>Focus</span>
-                        </div>
-                        <p style="font-size:12px;">Small business digital tooling · Mobile development · Database design</p>
-                    </div>
-                </div>
+        <section class="Window-menu" id="aboutMenu">
+          <div class="menu-close" id="menuClose"><i class="ri-close-line"></i></div>
+
+          <div class="menu-profile">
+            <img src="https://avatars.githubusercontent.com/u/194355898?v=4" alt="Sfezekile">
+            <div>
+              <div class="name">Sfezekile</div>
+              <div class="role">Software Engineering Student</div>
+              <div class="status"><span class="dot"></span> Open to freelance work</div>
             </div>
+          </div>
+      
+          <div class="menu-tabs">
+            <button class="tab-btn active" data-panel="overview">Overview</button>
+            <button class="tab-btn" data-panel="skills">Skills</button>
+            <button class="tab-btn" data-panel="experience">Experience</button>
+            <button class="tab-btn" data-panel="education">Education</button>
+            <button class="tab-btn" data-panel="contact">Contact</button>
+          </div>
+      
+          <div class="menu-body">
+
+            <section class="panel active" id="panel-overview">
+              <p class="eyebrow">Hello</p>
+              <h2 class="panel-title">I build practical tools for small businesses.</h2>
+              <p class="lead">Self-taught developer and Software Engineering student at Eduvos. I turn client briefs into working products — booking sites, e-commerce catalogs, project management apps — and document the build process as speed-code content on LinkedIn.</p>
+              <div class="fact-grid">
+                  <div class="fact-card"><div class="label">Based in</div><div class="value">Johannesburg, ZA</div></div>
+                  <div class="fact-card"><div class="label">Focus</div><div class="value">Small biz tooling</div></div>
+                  <div class="fact-card recent-repo" id="recentRepoCard">
+                    <div class="label"><span class="live-dot"></span> Latest on GitHub</div>
+                    <div class="value" id="recentRepoName">Loading…</div>
+                    <div class="repo-sub" id="recentRepoMeta"></div>
+                  </div>
+                </div>
+            </section>
+        
+            <section class="panel" id="panel-skills">
+              <div class="skill-group">
+                <h4>Core</h4>
+                <div class="chip-row">
+                  <div class="chip" style="color:orangered"><i class="ri-html5-fill"></i> HTML5</div>
+                  <div class="chip" style="color:#3b82f6"><i class="ri-css3-fill"></i> CSS3</div>
+                  <div class="chip" style="color:#facc15"><i class="ri-javascript-fill"></i> JavaScript</div>
+                  <div class="chip"><i class="ri-github-fill"></i> Git &amp; GitHub</div>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Database</h4>
+                <div class="chip-row"><div class="chip"><i class="ri-database-2-line"></i> MySQL</div></div>
+              </div>
+              <div class="skill-group">
+                <h4>Also familiar with</h4>
+                <div class="chip-row">
+                  <div class="chip"><i class="ri-code-s-slash-line"></i> Java</div>
+                  <div class="chip"><i class="ri-code-s-slash-line"></i> Python</div>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Currently learning</h4>
+                <div class="chip-row"><div class="chip learning"><i class="ri-smartphone-line"></i> React Native (Expo)</div></div>
+              </div>
+            </section>
+        
+            <section class="panel" id="panel-experience">
+              <div class="timeline-item">
+                <div class="period">In progress</div>
+                <h5>Momentum</h5>
+                <p>Multi-mode project management app (Student/Personal/Work) — Kanban, Calendar, Gantt, and a Task List view in progress.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="period">Client</div>
+                <h5>Devotional Shelf</h5>
+                <p>Bible study site for Rhema Bible Church North with an Add/Edit devotional form and localStorage persistence.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="period">Client</div>
+                <h5>Kiln &amp; Clay / Atelier Soleil</h5>
+                <p>Ceramics catalog with a MySQL-backed product database, and a luxury hair salon landing page.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="period">Learning</div>
+                <h5>Macrozone</h5>
+                <p>Mobile app built while learning React Native with Expo, tested via Expo Go in GitHub Codespaces.</p>
+              </div>
+            </section>
+        
+            <section class="panel" id="panel-education">
+              <div class="edu-item">
+                <div class="edu-icon"><i class="ri-graduation-cap-line"></i></div>
+                <div><h5>Eduvos</h5><span>Software Engineering — in progress</span></div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-icon"><i class="ri-book-open-line"></i></div>
+                <div><h5>Self-taught</h5><span>HTML, CSS, JavaScript, MySQL</span></div>
+              </div>
+            </section>
+        
+            <section class="panel" id="panel-contact">
+              <p class="lead">Open to freelance web projects and internship opportunities.</p>
+              <div class="contact-row">
+                <a class="contact-btn primary" href="#"><i class="ri-mail-send-line"></i> Email me</a>
+                <a class="contact-btn" href="#"><i class="ri-github-fill"></i> GitHub</a>
+                <a class="contact-btn" href="#"><i class="ri-linkedin-box-fill"></i> LinkedIn</a>
+              </div>
+            </section>
+        
+          </div>
         </section>
 
         <!-- Browser Window -->
@@ -608,6 +655,36 @@
             }
             switchToTab('tab-1');
         }
+
+        const menu = document.getElementById('aboutMenu');
+        const startBtn = document.getElementById('start-btn');
+        const closeBtn = document.getElementById('menuClose');
+            
+        startBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          menu.classList.toggle('open');
+        });
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          menu.classList.toggle('close');
+        });
+        // closeBtn.addEventListener('click', () => menu.classList.remove('open'));
+    
+        // close on outside click, like a real start menu
+        document.addEventListener('click', (e) => {
+          if (menu.classList.contains('open') && !menu.contains(e.target) && e.target !== startBtn) {
+            menu.classList.remove('open');
+          }
+        });
+    
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+          });
+        });
 
         // CLOCK FUNCTION
         function updateClock() {

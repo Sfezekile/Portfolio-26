@@ -10,11 +10,11 @@ async function fetchGitHubRepos() {
                 'Accept': 'application/vnd.github.v3+json'
             }
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const repos = await response.json();
         return repos;
     } catch (error) {
@@ -32,12 +32,12 @@ function categorizeRepos(repos) {
         research: [],
         other: []
     };
-    
+
     repos.forEach(repo => {
         // Categorize based on repository name or description
         const name = repo.name.toLowerCase();
         const description = (repo.description || '').toLowerCase();
-        
+
         if (name.includes('live') || name.includes('player') || name.includes('ui')) {
             categories.miniProjects.push(repo);
         } else if (name.includes('case-study') || name.includes('card') || description.includes('case study')) {
@@ -48,7 +48,7 @@ function categorizeRepos(repos) {
             categories.other.push(repo);
         }
     });
-    
+
     return categories;
 }
 
@@ -56,7 +56,7 @@ function categorizeRepos(repos) {
 function createRepoHTML(repo) {
     const icon = 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256';
     const repoName = repo.name.replace(/-/g, ' ').replace(/_/g, ' ');
-    
+
     return `
         <a href="${repo.html_url}" target="_blank" class="file">
             <div class="folder-img">
@@ -89,3 +89,54 @@ function createProjRepoHTML(repo) {
         </div>
     `;
 }
+
+function timeAgo(dateString) {
+    const seconds = Math.floor((Date.now() - new Date(dateString)) / 1000);
+    const intervals = [
+        ['year', 31536000], ['month', 2592000], ['week', 604800],
+        ['day', 86400], ['hour', 3600], ['minute', 60]
+    ];
+    for (const [label, secs] of intervals) {
+        const count = Math.floor(seconds / secs);
+        if (count >= 1) return `${count} ${label}${count > 1 ? 's' : ''} ago`;
+    }
+    return 'just now';
+}
+
+async function loadRecentRepo() {
+    const nameEl = document.getElementById('recentRepoName');
+    const metaEl = document.getElementById('recentRepoMeta');
+    if (!nameEl) return;
+
+    try {
+        const repos = await fetchGitHubRepos();
+        if (!repos.length) {
+            nameEl.textContent = 'No repos found';
+            metaEl.textContent = '';
+            return;
+        }
+        const latest = [...repos].sort(
+            (a, b) => new Date(b.updated_at) - new Date(a.updated_at)
+        )[0];
+        const displayName = latest.name.replace(/-/g, ' ').replace(/_/g, ' ');
+
+        nameEl.innerHTML = `<a href="${latest.html_url}" target="_blank" rel="noopener">${displayName}</a>`;
+        metaEl.textContent = `${latest.language ? latest.language + ' · ' : ''}updated ${timeAgo(latest.updated_at)}`;
+    } catch (err) {
+        console.error('Could not load recent repo:', err);
+        nameEl.textContent = 'Unavailable';
+        metaEl.textContent = '';
+    }
+}
+
+// load once on page load
+document.addEventListener('DOMContentLoaded', loadRecentRepo);
+
+// refresh whenever the start menu is opened
+startBtn.addEventListener('click', () => {
+    if (menu.classList.contains('open')) loadRecentRepo();
+});
+
+// keep it "live" while the tab stays open — GitHub's unauthenticated
+// rate limit is 60 req/hr, so every 5 min is safe
+setInterval(loadRecentRepo, 5 * 60 * 1000);
