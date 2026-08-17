@@ -196,7 +196,7 @@ header {
 .bottom-content .skill-section {
     font-size: 14px;
     font-weight: bold;
-    background: red;
+    /* background: red; */
     margin-bottom: 2px;
 }
 .bottom-content p {
