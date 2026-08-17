@@ -159,3 +159,47 @@ header {
     color: rgb(255, 136, 0);
     background: white;
 }
+
+.exper-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+.exper-content .skill-section {
+    font-size: 18px;
+    font-weight: bold;
+    background: red;
+}
+.exper-content ul {
+    padding: 6px 0 0 16px;
+    margin: 0;
+}
+.exper-content li {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+.exper-content strong {
+    font-weight: 700;
+}
+
+.bottom-content {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4px 10px;
+}
+.bottom-content .skill-section {
+    font-size: 14px;
+    font-weight: bold;
+    background: red;
+    margin-bottom: 2px;
+}
+.bottom-content p {
+    margin: 0;
+    color: var(--sub-header);
+}
