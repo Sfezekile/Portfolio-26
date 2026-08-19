@@ -18,7 +18,7 @@
 /* ===== START-MENU STYLE POPUP ===== */
 .Window-menu {
   position: fixed;
-  top: 50%;
+  bottom: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 460px;
