@@ -179,6 +179,14 @@
                         </div>
                         <button class="close-tab-btn" data-tab="tab-2"><i class="ri-close-line"></i></button>
                     </div>
+                    <!-- Tab-3 starts hidden -->
+                    <div class="tab" id="tab-3" style="display:none;">
+                        <div class="tab-n">
+                            <i class="ri-lists-fill"></i>
+                            <span>How It Works</span>
+                        </div>
+                        <button class="close-tab-btn" data-tab="tab-3"><i class="ri-close-line"></i></button>
+                    </div>
                 </div>
                 <div class="left-h"></div>
                 <div class="window-control">
@@ -212,197 +220,9 @@
                             immersive and memorable experience for visitors.</p>
                     </div>
                     <div class="search-cat">
-                        <a href="#how-it-works"> How It Works</a>
+                        <button id="howItWorksBtn">How It Works</button>
                         <button id="projectListBtn">Project Repos</button>
                     </div>
-
-                    <section id="how-it-works">
-                        <!-- Purpose Section -->
-                        <div class="manual-section">
-                            <h2 class="section-title">Purpose & Philosophy</h2>
-
-                            <h3 class="sub-title">What This Portfolio Represents</h3>
-
-                            <div class="purpose-grid">
-                                <div class="purpose-card">
-                                    <h4>Creativity & Innovation</h4>
-                                    <ul>
-                                        <li>Moving beyond standard portfolio templates</li>
-                                        <li>Demonstrating UX thinking through OS-like interface</li>
-                                        <li>Showing attention to detail and design sensibility</li>
-                                    </ul>
-                                </div>
-
-                                <div class="purpose-card">
-                                    <h4>Willingness to Learn</h4>
-                                    <ul>
-                                        <li>Implementing complex features from scratch</li>
-                                        <li>Building interactive components</li>
-                                        <li>Continuously adding new features and improvements</li>
-                                    </ul>
-                                </div>
-
-                                <div class="purpose-card">
-                                    <h4>Progress Tracking</h4>
-                                    <ul>
-                                        <li>Organized project repository showing growth</li>
-                                        <li>Documented learning journey through case studies</li>
-                                        <li>Visual representation of skills development</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Interface Components -->
-                        <div class="manual-section">
-                            <h2 class="section-title">Interface Components</h2>
-
-                            <div class="component">
-                                <h3>1. Desktop Environment</h3>
-                                <ul>
-                                    <li><strong>Wallpaper:</strong> Custom background creating OS atmosphere</li>
-                                    <li><strong>Interactive Elements:</strong> Clickable desktop icons (planned feature)
-                                    </li>
-                                    <li><strong>Responsive Design:</strong> Adapts to different screen sizes</li>
-                                </ul>
-                            </div>
-
-                            <div class="component">
-                                <h3>2. Menu Bar (Top Bar)</h3>
-                                <ul>
-                                    <li><strong>User Name:</strong> Personal branding element</li>
-                                    <li><strong>System Clock:</strong> Live time display updating every 30 seconds</li>
-                                    <li><strong>Status Icons:</strong> Network, volume, and battery indicators (visual
-                                        only)</li>
-                                </ul>
-                            </div>
-
-                            <div class="component">
-                                <h3>3. Taskbar (Bottom Bar)</h3>
-                                <ul>
-                                    <li><strong>Start Menu:</strong> Click to reveal user menu (functional design)</li>
-                                    <li><strong>Application Icons:</strong> Quick launch buttons for:
-                                        <ul>
-                                            <li>File Finder (file explorer)</li>
-                                            <li>Browser (web browser simulation)</li>
-                                            <li>GitHub, VS Code, MySQL Workbench, Figma (external links - planned)</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="component">
-                                <h3>4. Window System</h3>
-                                <ul>
-                                    <li><strong>Draggable Windows:</strong> Click and drag any window by its header</li>
-                                    <li><strong>Window Controls:</strong>
-                                        <ul>
-                                            <li><span class="highlight">Minimize:</span> Hides the window</li>
-                                            <li><span class="highlight">Maximize:</span> Expands to full screen</li>
-                                            <li><span class="highlight">Close:</span> Closes the window</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Resizable:</strong> Drag edges to resize windows</li>
-                                    <li><strong>Z-Index Management:</strong> Windows stack properly when clicked</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Applications Section -->
-                        <div class="manual-section">
-                            <h2 class="section-title">Applications</h2>
-
-                            <div class="app-card">
-                                <h3>File Finder (File Explorer)</h3>
-                                <p>A full-featured file explorer simulation that organizes projects into categories:</p>
-
-                                <h4>Navigation:</h4>
-                                <ul>
-                                    <li><strong>Sidebar Navigation:</strong> Quick access to Home, Mini Projects, Case
-                                        Studies, and Research</li>
-                                    <li><strong>Breadcrumb Trail:</strong> Shows current location</li>
-                                    <li><strong>Back/Forward/Refresh:</strong> Standard navigation controls</li>
-                                </ul>
-
-                                <h4>Categories:</h4>
-
-                                <div class="category">
-                                    <h5>Mini Projects</h5>
-                                    <ul>
-                                        <li><strong>Calendar-UI:</strong> A calendar interface design</li>
-                                        <li><strong>MiniPocket-Player:</strong> A music player concept</li>
-                                    </ul>
-                                </div>
-
-                                <div class="category">
-                                    <h5>Case Studies (6 Projects)</h5>
-                                    <ul>
-                                        <li><strong>Product Card</strong> - UI/UX case study</li>
-                                        <li><strong>Profile Card</strong> - Design analysis</li>
-                                        <li><strong>Animation in CSS</strong> - Animation techniques</li>
-                                        <li><strong>Coffee Customization Card</strong> - Interactive design</li>
-                                        <li><strong>Status Indicator Component</strong> - UI/UX study</li>
-                                        <li><strong>Button Design</strong> - Component analysis</li>
-                                    </ul>
-                                </div>
-
-                                <div class="category">
-                                    <h5>Research (4 Projects)</h5>
-                                    <ul>
-                                        <li><strong>Plants in Space</strong> - Research project</li>
-                                        <li><strong>e-com UI</strong> - E-commerce interface research</li>
-                                        <li><strong>React Apps</strong> - React framework exploration</li>
-                                        <li><strong>Landing Page Designs</strong> - Design pattern research</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="app-card">
-                                <h3>Browser (Web Browser Simulation)</h3>
-                                <p>A browser-like interface with tabbed browsing functionality:</p>
-
-                                <h4>Tab Management:</h4>
-                                <ul>
-                                    <li><strong>Multiple Tabs:</strong> Open and switch between tabs</li>
-                                    <li><strong>Tab Navigation:</strong> Click tabs to switch views</li>
-                                    <li><strong>Close Tabs:</strong> Close individual tabs (except the last one)</li>
-                                    <li><strong>Visual Feedback:</strong> Active tab highlighted</li>
-                                </ul>
-
-                                <h4>Tab 1 - Manual Page:</h4>
-                                <ul>
-                                    <li><strong>Title Section:</strong> "Dev. Portfolio Manual"</li>
-                                    <li><strong>Quick Actions:</strong> "Project Repos" button opens Tab 2</li>
-                                    <li><strong>Search Bar:</strong> Project search functionality (planned)</li>
-                                </ul>
-
-                                <h4>Tab 2 - Projects List:</h4>
-                                <ul>
-                                    <li><strong>Grid Display:</strong> Projects shown in organized grid</li>
-                                    <li><strong>Visual Previews:</strong> Project images/thumbnails</li>
-                                    <li><strong>Project Titles:</strong> Clear labeling for each project</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Status Section -->
-                        <div class="manual-section status-section">
-                            <div class="status-grid">
-                                <div class="status-item">
-                                    <span>Working</span>
-                                </div>
-                                <div class="status-item">
-                                    <span>Planned</span>
-                                </div>
-                                <div class="status-item">
-                                    <span>Known Issue</span>
-                                </div>
-                                <div class="status-item">
-                                    <span>Future Feature</span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
                 <!-- TAB 2 - Projects Page -->
                 <div class="content" id="projectsPage" style="display:none;">
@@ -414,6 +234,201 @@
                             <img src="https://avatars.githubusercontent.com/u/194355898?v=4" alt="">
                         </div>
                         <div class="project-list"></div>
+                    </div>
+                </div>
+                <!-- TAB 3 - How It Works Page -->
+                <div class="content" id="howItWorksPage" style="display:none;">
+                    <div class="title">
+                        <span>How It Works</span>
+                    </div>
+                    <div class="content-how-it-works">
+                        <section id="how-it-works">
+                            <!-- Purpose Section -->
+                            <div class="manual-section">
+                                <h2 class="section-title">Purpose & Philosophy</h2>
+
+                                <h3 class="sub-title">What This Portfolio Represents</h3>
+
+                                <div class="purpose-grid">
+                                    <div class="purpose-card">
+                                        <h4>Creativity & Innovation</h4>
+                                        <ul>
+                                            <li>Moving beyond standard portfolio templates</li>
+                                            <li>Demonstrating UX thinking through OS-like interface</li>
+                                            <li>Showing attention to detail and design sensibility</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="purpose-card">
+                                        <h4>Willingness to Learn</h4>
+                                        <ul>
+                                            <li>Implementing complex features from scratch</li>
+                                            <li>Building interactive components</li>
+                                            <li>Continuously adding new features and improvements</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="purpose-card">
+                                        <h4>Progress Tracking</h4>
+                                        <ul>
+                                            <li>Organized project repository showing growth</li>
+                                            <li>Documented learning journey through case studies</li>
+                                            <li>Visual representation of skills development</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Interface Components -->
+                            <div class="manual-section">
+                                <h2 class="section-title">Interface Components</h2>
+
+                                <div class="component">
+                                    <h3>1. Desktop Environment</h3>
+                                    <ul>
+                                        <li><strong>Wallpaper:</strong> Custom background creating OS atmosphere</li>
+                                        <li><strong>Interactive Elements:</strong> Clickable desktop icons (planned feature)
+                                        </li>
+                                        <li><strong>Responsive Design:</strong> Adapts to different screen sizes</li>
+                                    </ul>
+                                </div>
+
+                                <div class="component">
+                                    <h3>2. Menu Bar (Top Bar)</h3>
+                                    <ul>
+                                        <li><strong>User Name:</strong> Personal branding element</li>
+                                        <li><strong>System Clock:</strong> Live time display updating every 30 seconds</li>
+                                        <li><strong>Status Icons:</strong> Network, volume, and battery indicators (visual
+                                            only)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="component">
+                                    <h3>3. Taskbar (Bottom Bar)</h3>
+                                    <ul>
+                                        <li><strong>Start Menu:</strong> Click to reveal user menu (functional design)</li>
+                                        <li><strong>Application Icons:</strong> Quick launch buttons for:
+                                            <ul>
+                                                <li>File Finder (file explorer)</li>
+                                                <li>Browser (web browser simulation)</li>
+                                                <li>GitHub, VS Code, MySQL Workbench, Figma (external links - planned)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="component">
+                                    <h3>4. Window System</h3>
+                                    <ul>
+                                        <li><strong>Draggable Windows:</strong> Click and drag any window by its header</li>
+                                        <li><strong>Window Controls:</strong>
+                                            <ul>
+                                                <li><span class="highlight">Minimize:</span> Hides the window</li>
+                                                <li><span class="highlight">Maximize:</span> Expands to full screen</li>
+                                                <li><span class="highlight">Close:</span> Closes the window</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Resizable:</strong> Drag edges to resize windows</li>
+                                        <li><strong>Z-Index Management:</strong> Windows stack properly when clicked</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Applications Section -->
+                            <div class="manual-section">
+                                <h2 class="section-title">Applications</h2>
+
+                                <div class="app-card">
+                                    <h3>File Finder (File Explorer)</h3>
+                                    <p>A full-featured file explorer simulation that organizes projects into categories:</p>
+
+                                    <h4>Navigation:</h4>
+                                    <ul>
+                                        <li><strong>Sidebar Navigation:</strong> Quick access to Home, Mini Projects, Case
+                                            Studies, and Research</li>
+                                        <li><strong>Breadcrumb Trail:</strong> Shows current location</li>
+                                        <li><strong>Back/Forward/Refresh:</strong> Standard navigation controls</li>
+                                    </ul>
+
+                                    <h4>Categories:</h4>
+
+                                    <div class="category">
+                                        <h5>Mini Projects</h5>
+                                        <ul>
+                                            <li><strong>Calendar-UI:</strong> A calendar interface design</li>
+                                            <li><strong>MiniPocket-Player:</strong> A music player concept</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="category">
+                                        <h5>Case Studies (6 Projects)</h5>
+                                        <ul>
+                                            <li><strong>Product Card</strong> - UI/UX case study</li>
+                                            <li><strong>Profile Card</strong> - Design analysis</li>
+                                            <li><strong>Animation in CSS</strong> - Animation techniques</li>
+                                            <li><strong>Coffee Customization Card</strong> - Interactive design</li>
+                                            <li><strong>Status Indicator Component</strong> - UI/UX study</li>
+                                            <li><strong>Button Design</strong> - Component analysis</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="category">
+                                        <h5>Research (4 Projects)</h5>
+                                        <ul>
+                                            <li><strong>Plants in Space</strong> - Research project</li>
+                                            <li><strong>e-com UI</strong> - E-commerce interface research</li>
+                                            <li><strong>React Apps</strong> - React framework exploration</li>
+                                            <li><strong>Landing Page Designs</strong> - Design pattern research</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="app-card">
+                                    <h3>Browser (Web Browser Simulation)</h3>
+                                    <p>A browser-like interface with tabbed browsing functionality:</p>
+
+                                    <h4>Tab Management:</h4>
+                                    <ul>
+                                        <li><strong>Multiple Tabs:</strong> Open and switch between tabs</li>
+                                        <li><strong>Tab Navigation:</strong> Click tabs to switch views</li>
+                                        <li><strong>Close Tabs:</strong> Close individual tabs (except the last one)</li>
+                                        <li><strong>Visual Feedback:</strong> Active tab highlighted</li>
+                                    </ul>
+
+                                    <h4>Tab 1 - Manual Page:</h4>
+                                    <ul>
+                                        <li><strong>Title Section:</strong> "Dev. Portfolio Manual"</li>
+                                        <li><strong>Quick Actions:</strong> "Project Repos" button opens Tab 2</li>
+                                        <li><strong>Search Bar:</strong> Project search functionality (planned)</li>
+                                    </ul>
+
+                                    <h4>Tab 2 - Projects List:</h4>
+                                    <ul>
+                                        <li><strong>Grid Display:</strong> Projects shown in organized grid</li>
+                                        <li><strong>Visual Previews:</strong> Project images/thumbnails</li>
+                                        <li><strong>Project Titles:</strong> Clear labeling for each project</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Status Section -->
+                            <div class="manual-section status-section">
+                                <div class="status-grid">
+                                    <div class="status-item">
+                                        <span>Working</span>
+                                    </div>
+                                    <div class="status-item">
+                                        <span>Planned</span>
+                                    </div>
+                                    <div class="status-item">
+                                        <span>Known Issue</span>
+                                    </div>
+                                    <div class="status-item">
+                                        <span>Future Feature</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
@@ -532,258 +547,13 @@
         </div>
 
     </div>
-    <script src="./App/app.js"></script>
+    <script src="./App/App.js"></script>
+    <script src="./App/Browser.js"></script>
+    <script src="./App/Clock.js"></script>
+    <script src="./App/File Finder.js"></script>
     <script src="./App/server.js"></script>
-    <script>
-        // Tab state management
-        let activeTabs = ['tab-1'];
-        let currentTab = 'tab-1';
-
-        // Sample project data
-        const tabsBrowser = {
-            'project1': { fileName: 'Project Alpha', image: 'https://via.placeholder.com/150/333/fff?text=Alpha' },
-            'project2': { fileName: 'Project Beta', image: 'https://via.placeholder.com/150/444/fff?text=Beta' },
-            'project3': { fileName: 'Project Gamma', image: 'https://via.placeholder.com/150/555/fff?text=Gamma' }
-        };
-
-        // Function to show only one content page
-        function ShowOnlyB(id) {
-            const manualPage = document.getElementById('manualPage');
-            const projectsPage = document.getElementById('projectsPage');
-
-            if (id === 'manualPage') {
-                manualPage.style.display = 'flex';
-                projectsPage.style.display = 'none';
-            } else if (id === 'projectsPage') {
-                manualPage.style.display = 'none';
-                projectsPage.style.display = 'flex';
-            }
-        }
-
-        // Function to open Tab-2 (Projects List) - MAIN FUNCTION
-        function openProjectsTab() {
-            console.log('openProjectsTab called');
-
-            // Check if tab-2 is already open
-            if (activeTabs.includes('tab-2')) {
-                console.log('Tab-2 already open, switching to it');
-                switchToTab('tab-2');
-                return;
-            }
-
-            // Add tab-2 to active tabs
-            activeTabs.push('tab-2');
-            console.log('Active tabs:', activeTabs);
-
-            // Show tab-2 in the tab bar - THIS MAKES IT APPEAR NEXT TO TAB-1
-            const tab2 = document.getElementById('tab-2');
-            tab2.style.display = 'flex';
-            console.log('Tab-2 display set to flex');
-
-            // Switch to tab-2
-            switchToTab('tab-2');
-
-            // Load projects
-            loadProjects();
-        }
-
-        // Function to load projects in Tab-2
-        async function loadProjects() {
-            console.log('Loading projects');
-            ShowOnlyB('projectsPage');
-            document.querySelector('.path-name').textContent = 'projects.com';
-
-            const repos = await fetchGitHubRepos();
-            const categorized = categorizeRepos(repos);
-
-            let html = '';
-            categorized.all.forEach(repo => {
-                html += createProjRepoHTML(repo);
-            });
-            // If no repos found, show fallback content
-            if (!html) {
-                html = '<p>No mini projects found on GitHub.</p>';
-            }
-            // for (const key in tabsBrowser) {
-            //     const project = tabsBrowser[key];
-            //     html += `
-            //         <div class="item" style="cursor: pointer; background-image: url('${project.image}'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;">
-            //             ${project.fileName}
-            //         </div>
-            //     `;
-            // }
-            document.getElementsByClassName('project-list')[0].innerHTML = html;
-        }
-
-        // Function to switch to a specific tab
-        function switchToTab(tabId) {
-            console.log('Switching to tab:', tabId);
-            currentTab = tabId;
-
-            // Update tab styles - highlight active tab
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-                if (tab.id === tabId) {
-                    tab.classList.add('active');
-                }
-            });
-
-            // Show corresponding content
-            if (tabId === 'tab-1') {
-                ShowOnlyB('manualPage');
-                document.querySelector('.path-name').textContent = 'portfolio-26';
-            } else if (tabId === 'tab-2') {
-                loadProjects();
-            }
-        }
-
-        // Function to close a tab
-        function closeTab(tabId) {
-            console.log('closeTab called for:', tabId);
-            console.log('Active tabs before:', activeTabs);
-
-            // Don't close if only one tab remains
-            if (activeTabs.length <= 1) {
-                console.log('Cannot close last tab');
-                return;
-            }
-
-            // Remove tab from active tabs
-            const index = activeTabs.indexOf(tabId);
-            if (index > -1) {
-                activeTabs.splice(index, 1);
-            }
-
-            // Hide the tab
-            document.getElementById(tabId).style.display = 'none';
-
-            // If closing current tab, switch to another tab
-            if (currentTab === tabId) {
-                const nextTab = activeTabs[0] || 'tab-1';
-                switchToTab(nextTab);
-            }
-
-            console.log('Active tabs after:', activeTabs);
-        }
-
-        // Function to go home (Tab-1)
-        function goHome() {
-            console.log('goHome called');
-            if (!activeTabs.includes('tab-1')) {
-                activeTabs.push('tab-1');
-                document.getElementById('tab-1').style.display = 'flex';
-            }
-            switchToTab('tab-1');
-        }
-
-        const menu = document.getElementById('aboutMenu');
-        const startBtn = document.getElementById('start-btn');
-        // const closeBtn = document.getElementById('menuClose');
-
-        startBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            menu.classList.toggle('open');
-        });
-
-        // closeBtn.addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     e.stopPropagation();
-        //     menu.classList.remove('open');
-        // });
-
-        // close on outside click, like a real start menu
-        document.addEventListener('click', (e) => {
-            if (menu.classList.contains('open') && !menu.contains(e.target) && e.target !== startBtn) {
-                menu.classList.remove('open');
-            }
-        });
-
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
-            });
-        });
-
-        // CLOCK FUNCTION
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('clock').textContent = `${hours}:${minutes}`;
-        }
-
-        // ===== EVENT LISTENERS SETUP =====
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log('DOM loaded - setting up event listeners');
-
-            // 1. Setup Project Repos button click
-            const projectListBtn = document.getElementById('projectListBtn');
-            if (projectListBtn) {
-                console.log('Project Repos button found');
-                projectListBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log('Project Repos button clicked!');
-                    openProjectsTab();
-                });
-            } else {
-                console.log('ERROR: Project Repos button NOT found!');
-            }
-
-            // 2. Setup tab click events for switching
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.addEventListener('click', function (e) {
-                    if (e.target.closest('.close-tab-btn')) {
-                        console.log('Close button clicked, not switching tab');
-                        return;
-                    }
-                    console.log('Tab clicked:', this.id);
-                    switchToTab(this.id);
-                });
-            });
-
-            // 3. Setup close tab button events
-            document.querySelectorAll('.close-tab-btn').forEach(btn => {
-                btn.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    const tabId = this.getAttribute('data-tab');
-                    console.log('Close button clicked for tab:', tabId);
-                    closeTab(tabId);
-                });
-            });
-
-            
-
-            // 5. Initialize - only tab-1 visible
-            document.getElementById('tab-1').style.display = 'flex';
-            document.getElementById('tab-2').style.display = 'none';
-            switchToTab('tab-1');
-
-            // 6. Start clock
-            updateClock();
-            setInterval(updateClock, 1000);
-
-            console.log('Initialization complete!');
-        });
-
-        // Make functions globally accessible
-        window.openProjectsTab = openProjectsTab;
-        window.goHome = goHome;
-        window.closeTab = closeTab;
-        window.switchToTab = switchToTab;
-        window.ShowOnlyB = ShowOnlyB;
-        window.OpenPersonPro = OpenPersonPro;
-        window.OpenMiniPro = OpenMiniPro;
-        window.OpenHomeModel = OpenHomeModel;
-        window.OpenMiniModel = OpenMiniModel;
-        window.OpenCaseModel = OpenCaseModel;
-        window.OpenResearchModel = OpenResearchModel;
-
-        console.log('All functions exposed globally');
-    </script>
+    <script src="./App/Start Menu.js"></script>
+    <script src="./App/Window Manager.js"></script>
 
 </body>
 
