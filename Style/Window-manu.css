@@ -18,48 +18,35 @@
 /* ===== START-MENU STYLE POPUP ===== */
 .Window-menu {
   position: fixed;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 460px;
-  height: 600px;
-  max-height: 80vh;
+  transform: translate(-50%, 50%) scale(0.92);
+  width: 560px;
+  height: 500px;
+  max-height: 75vh;
   background: rgba(255, 255, 255, 0.425);
   backdrop-filter: blur(12px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
-  display: none;
+  display: flex;
   flex-direction: column;
   color: var(--black);
   overflow: hidden;
   z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
 }
 
 .Window-menu.open {
-  display: flex;
-  /* animation: pop .16s ease; */
-  top: 50%;
-  left: 50%;
-  bottom: -40vh;
-}
-.Window-menu.close {
-  display: none;
-  /* animation: pop .16s ease; */
-  top: 50%;
-  left: 50%;
-  bottom: -40vh;
-}
-@keyframes pop {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, -15%);
+  transition: opacity .18s ease, transform .18s ease, visibility 0s linear 0s;
 }
 
 .menu-close {

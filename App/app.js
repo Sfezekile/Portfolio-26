@@ -7,7 +7,7 @@ document.querySelectorAll('.taskbar-icon').forEach(icon => {
         const app = icon.getAttribute('data-app');
         const win = document.getElementById('win-' + app);
         if (win) {
-            win.style.display = 'flex';
+            win.classList.add('active');
             bringToFront(win);
         }
     });
@@ -15,10 +15,10 @@ document.querySelectorAll('.taskbar-icon').forEach(icon => {
 
 document.querySelectorAll('.window').forEach(win => {
     win.querySelector('.close-btn')?.addEventListener('click', () => {
-        win.style.display = 'none';
+        win.classList.remove('active');   // was: win.style.display = 'none';
     });
     win.querySelector('.min-btn')?.addEventListener('click', () => {
-        win.style.display = 'none';
+        win.classList.remove('active');   // was: win.style.display = 'none';
     });
     win.querySelector('.max-btn')?.addEventListener('click', () => {
         win.classList.toggle('maximized');
@@ -42,7 +42,6 @@ document.querySelectorAll('.window-control button').forEach(btn => {
             // Let's implement minimize as hide but keep state open.
             const win = windows[id];
             if (win) {
-                win.element.style.display = 'none';
                 win.element.classList.remove('active');
                 // keep win.open = true so it stays in taskbar
                 updateTaskbar();
