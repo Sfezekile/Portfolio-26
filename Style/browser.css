@@ -87,7 +87,7 @@
     overflow-y: auto;
     /* overflow: hidden; */
 }
-#manualPage , #projectsPage {
+#manualPage , #projectsPage, #howItWorksPage {
     width: 100%;
     height: 80vh;
     margin-top: 0vh;
@@ -407,7 +407,8 @@
     right: 0;
     color: #333;
     width: 104%;
-    background: var(--blue);
+    background: var(--white);
+    user-select: all;
 }
 
 .manual-section {
@@ -421,7 +422,7 @@
 .section-title {
     font-size: 12px;
     /* margin-bottom: 10px; */
-    color: var(--white);
+    color: var(--bg);
     /* border-bottom: 1px solid var(--white); */
     padding-bottom: 10px;
 }
@@ -437,7 +438,7 @@
 .sub-title {
     font-size: 14px;
     margin: 15px 0 10px 0;
-    color: var(--white);
+    color: var(--bg-2);
 }
 
 /* Purpose Cards */
