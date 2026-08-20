@@ -29,7 +29,7 @@
 .Window-menu {
   position: fixed;
   bottom: 0;
-  bottom: 10%;
+  bottom: 0%;
   left: 50%;
   transform: translate(-50%, 50%) scale(0.92);
   width: 560px;

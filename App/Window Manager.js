@@ -6,6 +6,14 @@
 
 let zCounter = 10;
 
+// Tracks which window IDs are currently maximized. When this is
+// non-empty, <body> gets a class that CSS uses to hide the menubar.
+const maximizedWindows = new Set();
+
+function updateMenubarVisibility() {
+    document.body.classList.toggle('has-maximized-window', maximizedWindows.size > 0);
+}
+
 function bringToFront(win) {
     zCounter++;
     win.style.zIndex = zCounter;
@@ -22,6 +30,12 @@ function closeWindow(appId) {
     const win = document.getElementById('win-' + appId);
     if (!win) return;
     win.classList.remove('active');
+
+    // If a maximized window gets closed, the menubar needs to come back.
+    if (maximizedWindows.has(win.id)) {
+        maximizedWindows.delete(win.id);
+        updateMenubarVisibility();
+    }
 }
 
 function minimizeWindow(appId) {
@@ -32,7 +46,9 @@ function minimizeWindow(appId) {
 }
 
 function toggleMaximize(winEl) {
-    if (winEl.style.width === '100%' || winEl.style.width === '100vw') {
+    const isMaximized = winEl.classList.contains('maximized');
+
+    if (isMaximized) {
         // restore
         winEl.style.width = winEl.dataset.prevWidth || '500px';
         winEl.style.height = winEl.dataset.prevHeight || '350px';
@@ -40,6 +56,8 @@ function toggleMaximize(winEl) {
         winEl.style.left = winEl.dataset.prevLeft || '100px';
         winEl.style.border = '';
         winEl.style.borderRadius = '';
+        winEl.classList.remove('maximized');
+        maximizedWindows.delete(winEl.id);
     } else {
         // save current, then maximize
         winEl.dataset.prevWidth = winEl.style.width || '500px';
@@ -47,12 +65,16 @@ function toggleMaximize(winEl) {
         winEl.dataset.prevTop = winEl.style.top || '80px';
         winEl.dataset.prevLeft = winEl.style.left || '100px';
         winEl.style.width = '100%';
-        winEl.style.height = 'calc(100% - 90px)';
-        winEl.style.top = '30px';
+        winEl.style.height = 'calc(100% - 0px)';
+        winEl.style.top = '0px';
         winEl.style.left = '0';
         winEl.style.border = 'none';
         winEl.style.borderRadius = '0';
+        winEl.classList.add('maximized');
+        maximizedWindows.add(winEl.id);
     }
+
+    updateMenubarVisibility();
 }
 
 // ---- taskbar icons open windows ----

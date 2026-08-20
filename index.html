@@ -9,10 +9,44 @@
     <link rel="stylesheet" href="./Style/window-style.css">
     <link rel="stylesheet" href="./Style/browser.css">
     <link rel="stylesheet" href="./Style/Window-manu.css">
+    <link rel="stylesheet" href="./Style/Onboarding.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
+
+    <!-- Mobile / Tablet block screen -->
+    <div id="mobile-block">
+        <div class="mb-icon"><i class="ri-computer-line"></i></div>
+        <h2>This portfolio is built for desktop</h2>
+        <p>MyOS simulates a desktop environment with draggable windows and a
+            taskbar — it needs a mouse and a bigger screen to make sense.
+            Please open this on a PC or laptop.</p>
+        <div class="mb-hint">sfezekile.dev — best viewed on desktop</div>
+    </div>
+    
+    <!-- Welcome / Intro overlay (desktop only) -->
+    <div id="intro-overlay">
+        <div class="intro-card">
+            <div class="intro-eyebrow">Welcome</div>
+            <h2>Hi, I'm Sfezekile 👋</h2>
+            <p>This portfolio is styled as a mini desktop OS. Everything here
+                is interactive — feel free to click around.</p>
+            <ul class="intro-tips">
+                <li><i class="ri-cursor-line"></i> Click <strong>Me</strong> in the taskbar for my profile, skills &amp; contact info</li>
+                <li><i class="ri-drag-move-line"></i> Windows are draggable — grab any header and move it</li>
+                <li><i class="ri-google-fill"></i> Open the <strong>Browser</strong> icon for the full site manual</li>
+                <li><i class="ri-folder-6-fill"></i> Open <strong>File Finder</strong> to browse my projects</li>
+            </ul>
+            <div class="intro-footer">
+                <label>
+                    <input type="checkbox" id="introDontShowAgain" checked>
+                    Don't show this again
+                </label>
+                <button class="intro-enter-btn" id="introEnterBtn">Enter →</button>
+            </div>
+        </div>
+    </div>
 
     <!-- DESKTOP CONTAINER -->
     <div id="desktop">
@@ -547,6 +581,7 @@
         </div>
 
     </div>
+    <script src="./App/Intro.js"></script>
     <script src="./App/App.js"></script>
     <script src="./App/Browser.js"></script>
     <script src="./App/Clock.js"></script>

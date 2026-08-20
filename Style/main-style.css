@@ -90,6 +90,8 @@ body {
     z-index: 1000;
     color: var(--text);
     gap: 8px;
+
+    transition: transform .18s ease, opacity .18s ease;
     
     button {
         font-size: 11px;
@@ -100,6 +102,12 @@ body {
         padding: 2px 4px;
         background: transparent;
     }
+}
+
+body.has-maximized-window #menubar {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .menubar-clock {

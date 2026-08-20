@@ -63,7 +63,6 @@ function createRepoHTML(repo) {
                 <img src="${icon}" alt="${repoName}">
             </div>
             <span>${repoName}</span>
-            ${repo.description ? `<p class="repo-desc">${repo.description}</p>` : ''}
         </a>
     `;
 }

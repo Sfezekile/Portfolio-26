@@ -1,0 +1,171 @@
+/* ---------- Mobile/Tablet Block ---------- */
+/* CSS-only detection via media query — this is the FIRST line of
+   defense, applying before any JS runs, so there's no flash of the
+   desktop UI on phones/tablets while scripts load. */
+
+#mobile-block {
+    display: none;
+}
+
+@media (max-width: 1023px), (pointer: coarse) and (max-width: 1366px) {
+    #desktop {
+        display: none !important;
+    }
+    #mobile-block {
+        display: flex !important;
+    }
+}
+
+#mobile-block {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 18px;
+    padding: 32px;
+    background: linear-gradient(180deg, #333 0%, #222 100%);
+    color: #fff;
+}
+
+#mobile-block .mb-icon {
+    font-size: 48px;
+    opacity: 0.85;
+}
+
+#mobile-block h2 {
+    font-size: 20px;
+    font-weight: 600;
+    max-width: 320px;
+}
+
+#mobile-block p {
+    font-size: 14px;
+    color: #c1c1c1;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
+#mobile-block .mb-hint {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #818080;
+}
+
+/* ---------- Welcome / Intro overlay (desktop only) ---------- */
+
+#intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 20, 20, 0.55);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .2s ease, visibility 0s linear .2s;
+}
+
+#intro-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity .2s ease, visibility 0s linear 0s;
+}
+
+.intro-card {
+    width: 440px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.425);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+    color: var(--black);
+    padding: 28px 26px;
+    transform: scale(0.94);
+    transition: transform .2s ease;
+}
+
+#intro-overlay.open .intro-card {
+    transform: scale(1);
+}
+
+.intro-card .intro-eyebrow {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    margin-bottom: 6px;
+}
+
+.intro-card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.intro-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+}
+
+.intro-card .intro-tips {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.intro-card .intro-tips li {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.intro-card .intro-tips i {
+    opacity: 0.7;
+}
+
+.intro-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    gap: 12px;
+}
+
+.intro-footer label {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.intro-enter-btn {
+    background: var(--black);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.intro-enter-btn:hover {
+    opacity: 0.85;
+}
