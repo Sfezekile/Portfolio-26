@@ -18,7 +18,11 @@
 /* ===== START-MENU STYLE POPUP ===== */
 .Window-menu {
   position: fixed;
+<<<<<<< HEAD
   bottom: 0;
+=======
+  bottom: 10%;
+>>>>>>> 8d5362e0ee8c2ddac9cc1bd58bd490b63c4fb4a5
   left: 50%;
   transform: translate(-50%, 50%) scale(0.92);
   width: 560px;
