@@ -81,7 +81,7 @@ async function OpenCaseModel() {
     categorized.caseStudies.forEach(repo => {
         html += createRepoHTML(repo);
     });
-    if (!html) html = '<p>No case studies found on GitHub.</p>';
+    if (!html) html = `<p>No case studies found on GitHub.</p>`;
 
     document.getElementById('caseStudies').innerHTML = html;
 }
@@ -97,7 +97,11 @@ async function OpenResearchModel() {
     categorized.research.forEach(repo => {
         html += createRepoHTML(repo);
     });
-    if (!html) html = '<p>No research projects found on GitHub.</p>';
+    if (!html) html = `
+            <div class="error-page">
+                <p>No research projects found on GitHub.</p>
+            </div>
+        `;
 
     document.getElementById('research').innerHTML = html;
 }

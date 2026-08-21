@@ -23,6 +23,12 @@ function openWindow(appId) {
     const win = document.getElementById('win-' + appId);
     if (!win) return;
     win.classList.add('active');
+
+    // A minimized window keeps its maximized state so it restores full-screen.
+    if (win.classList.contains('maximized')) {
+        maximizedWindows.add(win.id);
+    }
+    updateMenubarVisibility();
     bringToFront(win);
 }
 
