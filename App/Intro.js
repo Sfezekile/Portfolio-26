@@ -35,7 +35,7 @@ function initIntro() {
     });
 
     // Skip showing it again if the visitor already dismissed it before
-    const alreadySeen = localStorage.getItem(INTRO_STORAGE_KEY) === '1';
+    const alreadySeen = localStorage.getItem(INTRO_STORAGE_KEY) === '1000';
     if (!alreadySeen) {
         showIntro();
     }

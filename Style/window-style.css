@@ -40,7 +40,7 @@ body {
     display: flex;
     /* hidden by default */
     flex-direction: column;
-    border: 1px solid rgba(97, 97, 97, 0.541);
+    border: 2px solid var(--bg-2);
     resize: both;
     overflow: hidden;
     z-index: 10;
@@ -63,14 +63,13 @@ body {
 }
 
 .window-header {
-    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+    background: linear-gradient(180deg, rgb(34, 94, 44) 0%, rgb(27, 75, 35) 100%);
     padding: 4px 12px;
     height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: grab;
-    border-bottom: 1px solid #bbb;
     flex-shrink: 0;
 }
 
@@ -82,7 +81,7 @@ body {
     font-weight: 600;
     font-size: 14px;
     width: 150px;
-    color: #222;
+    color: var(--white);
 }
 
 .left-h {
@@ -94,48 +93,24 @@ body {
 
 }
 
-/* .window-control {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100px;
-    gap: 10px;
-
-    button {
-        width: 25px;
-        height: 25px;
-        padding: 5px;
-        border: none;
-        border-radius: 5px;
-        background: transparent;
-        color: var(--bg-2);
-    }
-    button:hover {
-        background: var(--gray);
-    }
-} */
 .window-control {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
-    /* gap: 10px; */
+    width: 70px;
+    height: 100%;
     gap: 8px;
 }
 
 .window-control button {
-    border: none;
     background: transparent;
-    font-size: 12px;
-    padding: 5px;
+    border: none;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    border-radius: 25px;
+    border: 2px solid var(--black);
 }
 
 .window-control .close-btn {
@@ -185,16 +160,20 @@ body {
     justify-content: left;
     align-items: center;
     gap: 5px;
-    background: var(--gray-2);
+    background: var(--bg);
 
     button {
         font-size: 18px;
         line-height: 0.75;
-        color: var(--sub-header);
+        color: var(--gray-2);
         padding: 8px 6px;
         border: none;
         border-radius: 50%;
         background: transparent;
+    }
+
+    .page-path {
+        color: var(--gray-2);
     }
 }
 
@@ -203,32 +182,6 @@ body {
     background: var(--gray);
 }
 
-.window-name {
-    width: 80%;
-    height: 100%;
-    padding: 0 10px;
-    border-radius: 10px;
-    /* background-color: var(--gray); */
-    display: flex;
-    justify-content: left;
-    align-items: center;
-
-    span {
-        font-size: 15px;
-        font-weight: 600;
-        color: var(--gray-2);
-        margin-bottom: 2px;
-    }
-}
-
-
-
-.main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
 
 /* NAV SECTION */
 nav {
@@ -288,6 +241,14 @@ li button {
 li button:hover {
     transition: all 0.2s ease-in;
     background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
 }
 
 /* Model Section */

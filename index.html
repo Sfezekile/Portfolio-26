@@ -15,7 +15,7 @@
 
 <body>
 
-    <!-- Mobile / Tablet block screen -->
+    <!-- Mobile / Tablet block screen --
     <div id="mobile-block">
         <div class="mb-icon"><i class="ri-computer-line"></i></div>
         <h2>This portfolio is built for desktop</h2>
@@ -26,7 +26,7 @@
     </div>
     
     <!-- Welcome / Intro overlay (desktop only) -->
-    <div id="intro-overlay">
+    <!-- <div id="intro-overlay">
         <div class="intro-card">
             <div class="intro-eyebrow">Welcome</div>
             <h2>Hi, I'm Sfezekile 👋</h2>
@@ -40,13 +40,13 @@
             </ul>
             <div class="intro-footer">
                 <label>
-                    <input type="checkbox" id="introDontShowAgain" checked>
+                    <input type="checkbox" id="introDontShowAgain">
                     Don't show this again
                 </label>
                 <button class="intro-enter-btn" id="introEnterBtn">Enter →</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- DESKTOP CONTAINER -->
     <div id="desktop">
@@ -194,39 +194,42 @@
 
         <!-- Browser Window -->
         <div id="win-browser" class="window" style="width:880px; height:520px; top:70px; left:80px;">
-            <div class="window-header"
-                style="background: var(--black); height: 40px; padding: 4px 12px 0px 12px; border: none;">
-                <div class="window-tab">
-                    <!-- Tab-1 is always visible -->
+            <div class="window-header browser-header"
+                style="background: var(--header-browser-bg); height: 25px; padding: 4px 12px 0px 12px; border: none;">
+                <!-- <div class="window-tab">
+                    <!-- Tab-1 is always visible --
                     <div class="tab active" id="tab-1">
                         <div class="tab-n">
-                            <i class="ri-google-fill"></i>
                             <span>Manual</span>
                         </div>
                         <button class="close-tab-btn" data-tab="tab-1"><i class="ri-close-line"></i></button>
                     </div>
-                    <!-- Tab-2 starts hidden -->
+                    <!-- Tab-2 starts hidden --
                     <div class="tab" id="tab-2" style="display:none;">
                         <div class="tab-n">
-                            <i class="ri-lists-fill"></i>
                             <span>Projects List</span>
                         </div>
                         <button class="close-tab-btn" data-tab="tab-2"><i class="ri-close-line"></i></button>
                     </div>
-                    <!-- Tab-3 starts hidden -->
+                    <!-- Tab-3 starts hidden --
                     <div class="tab" id="tab-3" style="display:none;">
                         <div class="tab-n">
-                            <i class="ri-lists-fill"></i>
                             <span>How It Works</span>
                         </div>
                         <button class="close-tab-btn" data-tab="tab-3"><i class="ri-close-line"></i></button>
                     </div>
-                </div>
+                </div> -->
                 <div class="left-h"></div>
-                <div class="window-control">
-                    <button class="min-btn" data-action="minimize">─</button>
-                    <button class="max-btn" data-action="maximize"><i class="ri-square-line"></i></button>
-                    <button class="close-btn" data-action="close"><i class="ri-close-line"></i></button>
+                <div class="window-control broswer-control">
+                    <button class="min-btn" data-action="minimize">
+                        <!-- ─ -->
+                    </button>
+                    <button class="max-btn" data-action="maximize">
+                        <!-- <i class="ri-square-line"></i> -->
+                    </button>
+                    <button class="close-btn" data-action="close">
+                        <!-- <i class="ri-close-line"></i> -->
+                    </button>
                 </div>
             </div>
             <div class="tab-control">
@@ -234,7 +237,30 @@
                 <button class="prev-btn"><i class="ri-arrow-right-s-line"></i></button>
                 <button class="reload-btn" onclick="goHome()"><i class="ri-home-line"></i></button>
                 <div class="tab-path">
-                    <p>https://<span>www.<span class="path-name">portfolio-26</span></span>/manual</p>
+                    <div class="window-tab">
+                        <!-- Tab-1 is always visible -->
+                        <div class="tab active" id="tab-1">
+                            <div class="tab-n">
+                                <span>Manual</span>
+                            </div>
+                            <button class="close-tab-btn" data-tab="tab-1"><i class="ri-close-line"></i></button>
+                        </div>
+                        <!-- Tab-2 starts hidden -->
+                        <div class="tab" id="tab-2" style="display:none;">
+                            <div class="tab-n">
+                                <span>Projects List</span>
+                            </div>
+                            <button class="close-tab-btn" data-tab="tab-2"><i class="ri-close-line"></i></button>
+                        </div>
+                        <!-- Tab-3 starts hidden -->
+                        <div class="tab" id="tab-3" style="display:none;">
+                            <div class="tab-n">
+                                <span>How It Works</span>
+                            </div>
+                            <button class="close-tab-btn" data-tab="tab-3"><i class="ri-close-line"></i></button>
+                        </div>
+                    </div>
+                    <!-- <p>/<span><span class="path-name">Browser</span></span>/</p> -->
                 </div>
             </div>
             <div class="browser-body">
@@ -474,9 +500,9 @@
                 <span class="window-title"><i class="ri-folder-6-fill"></i> File Finder</span>
                 <div class="left-h"></div>
                 <div class="window-control">
-                    <button class="min-btn" data-action="minimize">─</button>
-                    <button class="max-btn" data-action="maximize"><i class="ri-square-line"></i></button>
-                    <button class="close-btn" data-action="close"><i class="ri-close-line"></i></button>
+                    <button class="min-btn" data-action="minimize"></button>
+                    <button class="max-btn" data-action="maximize"></button>
+                    <button class="close-btn" data-action="close"></button>
                 </div>
             </div>
             <div class="window-body">

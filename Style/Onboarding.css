@@ -1,7 +1,7 @@
 /* ---------- Mobile/Tablet Block ---------- */
 /* CSS-only detection via media query — this is the FIRST line of
    defense, applying before any JS runs, so there's no flash of the
-   desktop UI on phones/tablets while scripts load. */
+   desktop UI on phones/tablets while scripts load. 
 
 #mobile-block {
     display: none;
@@ -54,7 +54,7 @@
     color: #818080;
 }
 
-/* ---------- Welcome / Intro overlay (desktop only) ---------- */
+/* ---------- Welcome / Intro overlay (desktop only) ---------- 
 
 #intro-overlay {
     position: fixed;

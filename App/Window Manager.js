@@ -115,6 +115,28 @@ document.querySelectorAll('.window-control button').forEach(btn => {
     });
 });
 
+document.querySelectorAll('.window-control button').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const action = this.dataset.action;
+        const winEl = this.closest('.window');
+        if (!winEl) return;
+        const id = winEl.id.replace('win-', '');
+
+        if (action === 'close') {
+            // Give the owning module (e.g. Browser) a chance to intercept —
+            // e.g. "close extra tabs" instead of closing the whole window.
+            const hook = window.WindowManager.beforeClose[id];
+            const shouldClose = hook ? hook() : true;
+            if (shouldClose) closeWindow(id);
+        } else if (action === 'minimize') {
+            minimizeWindow(id);
+        } else if (action === 'maximize') {
+            toggleMaximize(winEl);
+        }
+    });
+});
+
 // bring to front on any click inside a window
 document.querySelectorAll('.window').forEach(win => {
     win.addEventListener('mousedown', () => bringToFront(win));
