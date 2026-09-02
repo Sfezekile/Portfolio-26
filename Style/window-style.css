@@ -63,7 +63,7 @@ body {
 }
 
 .window-header {
-    background: linear-gradient(180deg, rgb(34, 94, 44) 0%, rgb(27, 75, 35) 100%);
+    background: linear-gradient(180deg, rgb(72, 37, 128) 0%, rgb(56, 25, 105) 100%);
     padding: 4px 12px;
     height: 30px;
     display: flex;

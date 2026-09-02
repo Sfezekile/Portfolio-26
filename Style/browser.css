@@ -10,7 +10,7 @@
     --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
     --blue: #4a9eff;
     --tab-bg: rgb(20, 63, 28);
-    --header-browser-bg: rgb(34, 94, 44);
+    --header-browser-bg: rgb(72, 37, 128);
 }
 
 /* Thin scrollbar styling */
@@ -141,7 +141,7 @@
 .tab-control button {
     font-size: 18px;
     line-height: 0.75;
-    color: var(--black);
+    color: var(--white);
     padding: 8px 6px;
     border: none;
     border-radius: 50%;

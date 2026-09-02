@@ -1,0 +1,52 @@
+:root {
+    --black: #1a1a1a;
+    --white: #fff;
+    --text: #d6d6d6;
+    --gray: rgba(255,255,255,0.15);
+    --gray-2: #c1c1c1;
+    --sub-header: #818080;
+    --bg: #333;
+    --bg-2: #222;
+    --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
+    --manubar-bg: rgb(220, 190, 248);
+}
+
+#widget {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 20vw;
+    height: calc(100vh - 100px);
+    border-radius: 10px;
+    border: 2px solid var(--black);
+    background: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    /* hidden state */
+    opacity: 0;
+    transform: translateX(-20px) scale(0.98);
+    pointer-events: none;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+}
+#widget.open {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+    visibility: visible;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0s;
+}
+/* #widget.close {
+    position: absolute;
+    top: 30px;
+    left: -20vw;
+    width: 20vw;
+    height: calc(100vh - 100px);
+    transition: all 0.3s ease-in-out;
+} */
