@@ -63,8 +63,44 @@
             </div>
         </div>
 
-        
-        <div id="widget"></div>
+        <div id="widget">
+            <div class="widget-container">
+                <div class="items" id="player">
+                    <div class="music-header">
+                        <div class="left-div">
+                            <div class="music-icon"><i class="ri-music-fill"></i></div>
+                            <div class="song-details">
+                                <div class="song-name">Song Title</div>
+                                <div class="song-artist">FAZ.</div>
+                            </div>
+                        </div>
+                        <div class="right-div">
+                            <div class="cta-btn">
+                                <button class="open-btn"><i class="ri-external-link-fill"></i></button>
+                                <button class="like-btn"><i class="ri-heart-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="music-duration-container">
+                        <div class="song-duration">
+                            <span>00:00</span>
+                            <span>00:00</span>
+                        </div>
+                        <div class="song-prograss">
+                            <div class="prograss-bar"></div>
+                        </div>
+                    </div>
+                    <div class="music-controls">
+                        <button id="prevBtn" onclick="prevSong()"><i class="ri-skip-back-fill"></i></button>
+                        <button id="playPauseBtn"><i class="ri-play-fill"></i></button>
+                        <button id="nextBtn" onclick="nextSong()"><i class="ri-skip-forward-fill"></i></button>
+                    </div>
+                </div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+        </div>
         
         <section class="Window-menu" id="aboutMenu">
             <!-- <div class="menu-close" id="menuClose"><i class="ri-close-line"></i></div> -->

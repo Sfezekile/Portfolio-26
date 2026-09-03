@@ -8,7 +8,7 @@
     --bg: #333;
     --bg-2: #222;
     --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
-    --manubar-bg: rgb(220, 190, 248);
+    --manubar-bg: rgb(89, 43, 161);
 }
 
 /* RESET & BASE */
@@ -83,8 +83,6 @@ body {
     left: 0;
     width: 100%;
     height: 30px;
-    /* background: var(--black); */
-    backdrop-filter: blur(12px);
     border-top: 1px solid rgba(255,255,255,0.1);
     display: flex;
     align-items: center;
@@ -140,10 +138,11 @@ body.has-maximized-window #menubar {
 .taskbar-container {
     width: 100%;
     height: 50px;
-    background: rgba(255, 255, 255, 0.164);
-    backdrop-filter: blur(12px);
+    /* backdrop-filter: blur(12px); */
+    background: rgb(72, 37, 128);
     border-top: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
+    border: 2px solid var(--black);
     display: flex;
     justify-content: left;
     align-items: center;
@@ -173,16 +172,12 @@ body.has-maximized-window #menubar {
 }
 
 #start-btn {
-    background: rgba(255,255,255,0.1);
-    border: none;
+    background: rgb(126, 54, 194);
+    border: 2px solid var(--black);
     color: white;
     font-size: 18px;
     padding: 5px 6px 7px 5px;
     border-radius: 50px;
-    border-top: 1px solid rgba(255, 255, 255, 0.349);
-    border-left: 1px solid rgba(255, 255, 255, 0.349);
-    /* border-bottom: 1px solid #ffffff09;
-    border-right: 1px solid #ffffff09; */
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -237,7 +232,6 @@ body.has-maximized-window #menubar {
 }
 
 .taskbar-icon:hover {
-    background: rgba(255,255,255,0.2);
     transform: scale(1.05);
 }
 
@@ -253,15 +247,15 @@ body.has-maximized-window #menubar {
     height: 35px;
     line-height: 0.75;
 }
-.taskbar-icon::after {
+.taskbar-icon.active::after {
     content: '';
     position: relative;
     bottom: 0px;
     left: 0;
-    width: 3px;
+    width: 5px;
     height: 3px;
     border-radius: 10px;
-    background: rgba(59, 55, 55, 0.473); 
+    background: rgba(36, 154, 201, 0.473); 
 }
 
 .taskbar-icon .icon-active {

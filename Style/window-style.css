@@ -2,10 +2,11 @@
     --black: #1a1a1a;
     --white: #fff;
     --gray: rgba(255, 255, 255, 0.15);
-    --gray-2: #c1c1c1;
+    --gray-2: #cec8c8;
     --sub-header: #818080;
     --bg: #333;
     --bg-2: #222;
+    --accent: #886ee7;
     --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
 }
 
@@ -160,12 +161,12 @@ body {
     justify-content: left;
     align-items: center;
     gap: 5px;
-    background: var(--bg);
+    background: var(--white);
 
     button {
         font-size: 18px;
         line-height: 0.75;
-        color: var(--gray-2);
+        color: var(--bg);
         padding: 8px 6px;
         border: none;
         border-radius: 50%;
@@ -173,7 +174,7 @@ body {
     }
 
     .page-path {
-        color: var(--gray-2);
+        color: var(--white);
     }
 }
 
@@ -188,7 +189,7 @@ nav {
     /* padding: 8px; */
     width: 160px;
     flex-shrink: 0;
-    background: var(--bg);
+    background: var(--gray-2);
     padding: 12px 8px;
     overflow-y: auto;
     box-sizing: border-box;
@@ -202,6 +203,7 @@ ul {
     padding: 0;
     gap: 5px;
     margin-bottom: 5px;
+    
 
     /* span {
         font-size: 12px;
@@ -212,7 +214,7 @@ ul {
 
 .sub-header {
     font-size: 12px;
-    color: var(--gray-2);
+    color: var(--black);
     letter-spacing: 0.05em;
     opacity: 0.6;
     display: block;
@@ -232,10 +234,14 @@ li button {
     border-radius: 6px;
     cursor: pointer;
     font-size: 13px;
-    color: var(--gray-2);
+    color: var(--bg);
     display: flex;
     align-items: center;
     gap: 6px;
+
+    i {
+        color: var(--accent);
+    }
 }
 
 li button:hover {
@@ -256,7 +262,7 @@ li button:hover {
     /* width: clamp(50%, 100%, 100%); */
     /* height: 100vh; */
     color: var(--gray-2);
-    background: var(--bg-2);
+    background: var(--white);
 
     flex: 1;
     overflow-y: auto;
