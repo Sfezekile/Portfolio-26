@@ -9,6 +9,8 @@
     --bg-2: #222;
     --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
     --blue: #4a9eff;
+    --tab-bg: rgb(20, 63, 28);
+    --header-browser-bg: rgb(72, 37, 128);
 }
 
 /* Thin scrollbar styling */
@@ -33,49 +35,136 @@
 }
 
 /* Browser Section */
+/* Browser Controler */
+.broswer-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    height: 100%;
+    gap: 8px;
+}
+.broswer-control button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    border-radius: 25px;
+    border: 2px solid var(--black);
+}
+.broswer-control button:hover {
+    background: var(--gray);
+}
+.broswer-control .close-btn:hover {
+    background: #ff4444;
+    color: white;
+}
+
+/* Tab */
 .window-tab {
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
     flex: 1;
+    overflow: hidden;
 }
 .tab {
     position: relative;
-    bottom: -2px;
-    padding: 5px 9px;
-    min-width: 200px;
-    color: var(--gray-2);
-    border: none;
-    border-radius: 8px 8px 0 0;
-    background: var(--black);
+    bottom: 0px;
+    padding: 5px 10px;
+    min-width: 50px;
+    height: 100%;
     display: flex;
     cursor: pointer;
+    /* border-radius: 5px; */
+    /* border-right: 1px solid var(--black);
+    border-left: 1px solid var(--black); */
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+    gap: 5px;
     transition: all 0.2s ease;
+
+    ::after {
+        content: '';
+        position: absolute;
+        top: 25%;
+        right: -2px;
+        height: 50%;
+        width: 2px;
+        background: var(--black);
+    }
 }
 .tab:hover {
     background: var(--gray);
 }
+.tab.active {
+    background: var(--header-browser-bg);
+}
+.tab.active .tab-n {
+    color: var(--white);
+}
+.tab.active .close-tab-btn {
+    color: var(--white);
+}
 .tab .tab-n {
     display: flex;
     align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 2px;
     gap: 6px;
 }
 .tab .close-tab-btn {
-    display: none;
-    color: var(--gray-2);
+    display: inline-block;
+    color: var(--black);
     background: none;
     border: none;
     cursor: pointer;
-    padding: 2px 6px;
+    padding: 0;
     border-radius: 4px;
 }
-.tab .close-tab-btn:hover {
-    background: rgba(128, 128, 128, 0.5);
-    /* color: #ff4444; */
+
+.tab-control {
+    display: flex;
+    height: 35px;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+    background: var(--header-browser-bg);
+    padding: 0 8px;
 }
+.tab-control button {
+    font-size: 18px;
+    line-height: 0.75;
+    color: var(--white);
+    padding: 8px 6px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+.tab-control button:hover {
+    background: var(--gray);
+}
+.tab-path {
+    width: 80%;
+    height: 70%;
+    padding: 0 0px;
+    border-radius: 10px;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border: 2px solid var(--black);
+    overflow: hidden;
+}
+
+/* Body Page */
 .browser-body {
     position: relative;
     height: 100%;
@@ -313,77 +402,7 @@
     align-items: center;
     text-align: center;
 }
-.tab-control {
-    display: flex;
-    height: 35px;
-    justify-content: left;
-    align-items: center;
-    gap: 5px;
-    background: var(--black);
-    padding: 0 8px;
-}
-.tab-control button {
-    font-size: 18px;
-    line-height: 0.75;
-    color: var(--sub-header);
-    padding: 8px 6px;
-    border: none;
-    border-radius: 50%;
-    background: transparent;
-    cursor: pointer;
-}
-.tab-control button:hover {
-    background: var(--gray);
-}
-.tab-path {
-    width: 80%;
-    height: 70%;
-    padding: 0 10px;
-    border-radius: 10px;
-    background-color: var(--gray);
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-.tab-path p {
-    font-size: 15px;
-    font-weight: 600;
-    color: rgb(156, 156, 156);
-    margin-bottom: 2px;
-}
-.tab-path span {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--gray-2);
-    margin-bottom: 2px;
-}
-.window-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-.window-control {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100px;
-    /* gap: 10px; */
-    gap: 8px;
-}
-.window-control button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 4px;
-}
-.window-control button:hover {
-    background: var(--gray);
-}
-.window-control .close-btn:hover {
-    background: #ff4444;
-    color: white;
-}
+
 #manualPage, #projectsPage {
     display: none;
 }
@@ -391,13 +410,8 @@
 #projectsPage[style*="display:flex"] {
     display: flex !important;
 }
-.tab.active {
-    background: var(--gray);
-    border-bottom: 2px solid var(--blue);
-}
-.tab.active .close-tab-btn {
-    display: inline-block;
-}
+
+
 
 /* Manual Section Styles */
 #how-it-works {

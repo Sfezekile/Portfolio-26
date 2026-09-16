@@ -33,3 +33,4 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
         document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
     });
 });
+

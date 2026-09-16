@@ -41,7 +41,7 @@ function openHowItWorksTab() {
 
 async function loadProjects() {
     ShowOnlyB('projectsPage');
-    document.querySelector('.path-name').textContent = 'projects.com';
+    // document.querySelector('.path-name').textContent = 'projects.com';
 
     const repos = await fetchGitHubRepos();
     const categorized = categorizeRepos(repos);
@@ -66,12 +66,12 @@ function switchToTab(tabId) {
 
     if (tabId === 'tab-1') {
         ShowOnlyB('manualPage');
-        document.querySelector('.path-name').textContent = 'portfolio-26';
+        // document.querySelector('.path-name').textContent = 'portfolio-26';
     } else if (tabId === 'tab-2') {
         loadProjects();
     } else if (tabId === 'tab-3') {
         ShowOnlyB('howItWorksPage');
-        document.querySelector('.path-name').textContent = 'how-it-works';
+        // document.querySelector('.path-name').textContent = 'how-it-works';
     }
 }
 
@@ -153,7 +153,7 @@ function initBrowser() {
 
 document.addEventListener('DOMContentLoaded', initBrowser);
 
-window.Browser = { openProjectsTab, openHowItWorksTab, closeTab, goHome, switchToTab, ShowOnlyB };
+window.Browser = { openProjectsTab, openHowItWorksTab, closeTab, goHome, switchToTab, ShowOnlyB};  // removed "ShowOnlyB" form the parameter
 // kept as globals too since HTML uses inline onclick="goHome()"
 window.goHome = goHome;
 window.closeTab = closeTab;
