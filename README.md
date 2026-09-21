@@ -7,9 +7,11 @@ A running record of the bugs we hit and the underlying JS/CSS concepts behind ea
 ---
 # MyOS Portfolio
 
+<img src="./screenshots/terminal.gif" width="600" alt="Demo animation">
+
 **Live:** [MySO-Portfolio](https://sfezekile.github.io/Portfolio-26/)
 
-![Terminal](screenshots/terminal.gif)
+![MyOS desktop](screenshots/desktop.png)
 
 ## Screenshots
 
