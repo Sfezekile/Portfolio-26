@@ -3,7 +3,9 @@ const GITHUB_USERNAME = 'Sfezekile'; // Your GitHub username
 const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
 
 // Function to fetch repositories from GitHub
+let repoCache = null, repoCacheTime = 0;
 async function fetchGitHubRepos() {
+    if (repoCache && Date.now() - repoCacheTime < 5 * 60 * 1000) return repoCache;
     try {
         const response = await fetch(GITHUB_API_URL, {
             headers: {
@@ -21,6 +23,8 @@ async function fetchGitHubRepos() {
         console.error('Error fetching GitHub repos:', error);
         return [];
     }
+    repoCache = repos; repoCacheTime = Date.now();
+    return repos;
 }
 
 // Function to filter and organize repos by category
