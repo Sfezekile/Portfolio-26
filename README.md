@@ -7,7 +7,7 @@ A running record of the bugs we hit and the underlying JS/CSS concepts behind ea
 ---
 # MyOS Portfolio
 
-**Live:** https://your-link-here
+**Live:** [MySO-Portfolio](https://sfezekile.github.io/Portfolio-26/)
 
 ![MyOS desktop](screenshots/desktop.png)
 
