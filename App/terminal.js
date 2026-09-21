@@ -211,3 +211,6 @@ function mountTerminal(root, hooks = {}) {
 
   return ctx;
 }
+window.Terminal = { mountTerminal };
+// kept as globals too since the HTML uses inline onclick=""
+window.mountTerminal = mountTerminal;
