@@ -174,7 +174,7 @@ body {
     }
 
     .page-path {
-        color: var(--white);
+        color: var(--bg-2);
     }
 }
 
@@ -311,7 +311,7 @@ li button:hover {
     text-decoration: none;
     background: transparent;
     border: none;
-    color: var(--gray-2);
+    color: var(--bg-2);
     display: flex;
     flex-direction: column;
     align-items: center;
