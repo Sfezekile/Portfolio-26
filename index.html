@@ -698,16 +698,15 @@
     <script src="./App/terminal.js"></script>
     <script src="./App/content.js"></script>
     <script>
-        const APPS = { 'file-finder': 'win-filefinder', browser: 'win-browser', terminal: 'win-terminal' };
+           const APPS = { 'file-finder': 'filefinder', browser: 'browser', terminal: 'terminal' };
 
-        mountTerminal(document.getElementById('term'), {
-            content: MYOS_CONTENT,
-            openApp: (name) => {
-                const el = document.getElementById(APPS[name]);
-                if (!el) return false;
-                bringToFront(el);
-            },
-        });
+           mountTerminal(document.getElementById('term'), {
+               content: MYOS_CONTENT,
+               openApp: (name) => {
+                   if (!APPS[name]) return false;
+                   WindowManager.open(APPS[name]);
+               },
+           });
     </script>
 
 </body>
