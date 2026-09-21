@@ -131,11 +131,6 @@ async function loadRecentRepo() {
 // load once on page load
 document.addEventListener('DOMContentLoaded', loadRecentRepo);
 
-// refresh whenever the start menu is opened
-startBtn.addEventListener('click', () => {
-    if (menu.classList.contains('open')) loadRecentRepo();
-});
-
 // keep it "live" while the tab stays open — GitHub's unauthenticated
 // rate limit is 60 req/hr, so every 5 min is safe
 setInterval(loadRecentRepo, 5 * 60 * 1000);
