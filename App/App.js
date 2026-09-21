@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('All modules loaded:', {
         WindowManager: !!window.WindowManager,
         Browser: !!window.Browser,
-        FileFinder: !!window.FileFinder
+        FileFinder: !!window.FileFinder,
+        Terminal: !!window.Terminal
     });
 });
