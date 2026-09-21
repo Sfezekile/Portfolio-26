@@ -13,9 +13,9 @@ A running record of the bugs we hit and the underlying JS/CSS concepts behind ea
 
 ## Screenshots
 
-| File Finder | Terminal |
+| File Finder |  ![File Finder](screenshots/file-finder.png) |
 |---|---|
-| ![File Finder](screenshots/file-finder.png) | ![Terminal](screenshots/terminal.png) |
+| Terminal | ![Terminal](screenshots/terminal.png) |
 
 ## 1. Inline styles beat CSS classes — always
 
