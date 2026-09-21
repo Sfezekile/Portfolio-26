@@ -1,0 +1,299 @@
+/* Your CSS here */
+:root {
+    --black: #1a1a1a;
+    --white: #fff;
+    --gray: rgba(255,255,255,0.15);
+    --gray-2: #c1c1c1;
+    --sub-header: #818080;
+    --bg: #333;
+    --bg-2: #222;
+    --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
+    --blue: #4a9eff;
+    --orange: rgb(255, 123, 0);
+    --tab-bg: rgb(20, 63, 28);
+    --header-terminal-bg: rgb(72, 37, 128);
+}
+
+/* Thin scrollbar styling */
+*, .model, .window-body, .term {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,.25) transparent;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+*::-webkit-scrollbar, .model::-webkit-scrollbar, .window-body::-webkit-scrollbar, .term::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track, .model::-webkit-scrollbar-track, .window-body::-webkit-scrollbar-track, .term::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb, .model::-webkit-scrollbar-thumb, .window-body::-webkit-scrollbar-thumb, .term::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 0px;
+    min-height: 24px;
+}
+
+/* ----- WINDOWS (pop-ups) ----- */
+.window {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    width: 500px;
+    height: 350px;
+    min-width: 300px;
+    min-height: 200px;
+    background: var(--white);
+    border-radius: 10px 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    display: flex;
+    /* hidden by default */
+    flex-direction: column;
+    border: 2px solid var(--bg-2);
+    resize: both;
+    overflow: hidden;
+    z-index: 10;
+
+    opacity: 1;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.94);
+    transform-origin: center;
+    transition: opacity .16s ease, transform .16s ease, visibility 0s linear .16s;
+}
+
+.window {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+    z-index: 100;
+    transition: opacity .16s ease, transform .16s ease, visibility 0s linear 0s;
+}
+
+.window-header {
+    background: linear-gradient(180deg, rgb(72, 37, 128) 0%, rgb(56, 25, 105) 100%);
+    padding: 4px 12px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    flex-shrink: 0;
+}
+
+.window-header:active {
+    cursor: grabbing;
+}
+
+.window-title h2 {
+    font-weight: 600;
+    font-size: 14px;
+    width: 150px;
+    color: var(--white);
+}
+
+.left-h {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 100px;
+
+}
+
+.window-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    height: 100%;
+    gap: 8px;
+}
+
+.window-control button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    border-radius: 25px;
+    border: 2px solid var(--black);
+}
+
+.window-control .close-btn {
+    background: #e74c3c;
+    color: var(--black);
+}
+
+.window-control .close-btn:hover {
+    background: #c0392b;
+}
+
+.window-control .max-btn {
+    background: #f1c40f;
+    color: var(--black);
+}
+
+.window-control .max-btn:hover {
+    background: #d4ac0d;
+}
+
+.window-control .min-btn {
+    background: #2ecc71;
+    color: var(--black);
+}
+
+.window-control .min-btn:hover {
+    background: #27ae60;
+}
+
+#win-filefinder .term {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+}
+
+.term {
+    flex: 1;
+    padding: 16px;
+    background: #1a1a1a;
+    overflow: auto;
+    font-size: 14px;
+    color: #f5f4f4;
+}
+
+.page-control {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+    background: var(--white);
+
+    button {
+        font-size: 18px;
+        line-height: 0.75;
+        color: var(--bg);
+        padding: 8px 6px;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+    }
+
+    .page-path {
+        color: var(--white);
+    }
+}
+
+.page-control button:hover,
+.left-h button:hover {
+    background: var(--gray);
+}
+
+/* Terminal Section */
+/* Terminal Controler */
+.terminal-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    height: 100%;
+    gap: 8px;
+}
+.terminal-control button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    border-radius: 25px;
+    border: 2px solid var(--black);
+}
+.terminal-control button:hover {
+    background: var(--gray);
+}
+.terminal-control .close-btn:hover {
+    background: #ff4444;
+    color: white;
+}
+
+
+/* Body Page */
+.term {
+    position: relative;
+    height: 100%;
+    flex: 1;
+    padding: 10px 10px;
+    font-size: 15px;
+    color: var(--white);
+    background: var(--bg-2);
+    overflow-y: auto;
+    /* overflow: hidden; */
+}
+
+#log p{
+    max-width: 80ch;
+    text-align: left;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    font-size: 15px;
+    margin: 0 0 6px;
+    margin-left: 15px;
+}
+.term-log, .term-prompt {
+    margin-bottom: 15px
+}
+.term-prompt {
+    position: relative;
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px
+    /* background: red; */
+}
+.ps1 {
+    margin-left: 15px;
+    
+    .user {
+        font-weight: 700;
+        color: var(--blue)
+    }
+    .locator {
+        font-weight: 700;
+        padding: 2px;
+        color: var(--bg);
+        background: #2ecc71;
+    }
+}
+.term-prompt::before {
+    content: '';
+    position: absolute;
+    top: 5.5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2ecc71;
+}
+.cmd {
+    color: var(--orange); 
+    font-weight: 700; 
+}
+input {
+    width: 80%;
+    flex: 1;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    color: whitesmoke;
+}
+input:focus {
+outline: none;
+}
+
+.man-h { font-weight: 700; margin: 10px 0 2px; }
+.man-b { padding-left: 4ch; white-space: pre-wrap; margin: 0 0 2px; }
