@@ -5,6 +5,17 @@
 A running record of the bugs we hit and the underlying JS/CSS concepts behind each fix, in the order we covered them.
 
 ---
+# MyOS Portfolio
+
+**Live:** https://your-link-here
+
+![MyOS desktop](screenshots/desktop.png)
+
+## Screenshots
+
+| File Finder | Terminal |
+|---|---|
+| ![File Finder](screenshots/file-finder.png) | ![Terminal](screenshots/terminal.png) |
 
 ## 1. Inline styles beat CSS classes — always
 
