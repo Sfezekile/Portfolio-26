@@ -189,7 +189,7 @@ nav {
     /* padding: 8px; */
     width: 160px;
     flex-shrink: 0;
-    background: var(--gray-2);
+    background: #e6e6e6;
     padding: 12px 8px;
     overflow-y: auto;
     box-sizing: border-box;
@@ -291,7 +291,7 @@ li button:hover {
 
 .page-path {
     padding: 0 10px;
-    /* background-color: var(--gray); */
+    background-color: var(--gray);
     display: flex;
     justify-content: left;
     align-items: center;
