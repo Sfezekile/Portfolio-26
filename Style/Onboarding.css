@@ -4,7 +4,7 @@
    desktop UI on phones/tablets while scripts load. */
 
 #mobile-block {
-    display: flex;
+    display: none;
 }
 
 @media (max-width: 1023px), (pointer: coarse) and (max-width: 1366px) {
