@@ -10,7 +10,7 @@ A running record of the bugs we hit and the underlying JS/CSS concepts behind ea
 **Live:** [MySO-Portfolio](https://sfezekile.github.io/Portfolio-26/)
 
 ![MyOS desktop](screenshots/desktop.png)
-
+![Terminal](screenshots/terminal.gif)
 ## Screenshots
 
 | File Finder |  ![File Finder](screenshots/file-finder.png) |
