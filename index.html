@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./Style/Window-manu.css">
     <link rel="stylesheet" href="./Style/Onboarding.css">
     <link rel="stylesheet" href="./Style/Profil-menu.css">
+    <link rel="stylesheet" href="./Style/term-style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -600,6 +601,44 @@
             </div>
         </div>
 
+        <!-- Terminal Window -->
+        <div id="win-terminal" class="window" style="width:880px; height:520px; top:70px; left:35px;">
+            <div class="window-header terminal-header">
+                <div class="window-title">
+                    <h2>Terminal</h2>
+                </div>
+                <div class="window-control terminal-control">
+                    <button class="min-btn" data-action="minimize">
+                        <!-- ─ -->
+                    </button>
+                    <button class="max-btn" data-action="maximize">
+                        <!-- <i class="ri-square-line"></i> -->
+                    </button>
+                    <button class="close-btn" data-action="close">
+                        <!-- <i class="ri-close-line"></i> -->
+                    </button>
+                </div>
+            </div>
+
+            <div class="term" id="term"> <!-- overflow-y: auto -->
+                <div class="term-log" id="log">
+                    <p>MyOS Portfolio is a unique, operating-system-inspired portfolio website designed to showcase
+                        my skills, creativity, and continuous learning journey.
+                    </p>
+                    <p>
+                        Unlike traditional portfolios, MyOS simulates a desktop environment with windows, taskbars, and file
+                        navigation to provide an
+                        immersive and memorable experience for visitors.
+                    </p>
+
+                </div> <!-- welcome + past commands/responses -->
+                <div class="term-prompt">
+                    <span class="ps1"><span class="user">MyOS</span>: ~ <span class="locator">main</span> $</span>
+                    <input id="cmd" autocomplete="off" spellcheck="false" autocapitalize="off">
+                </div>
+            </div>
+        </div>
+        
         <!-- TASKBAR -->
         <div id="taskbar">
             <button id="start-btn">
@@ -656,6 +695,20 @@
     <script src="./App/File Finder.js"></script>
     <script src="./App/Start Menu.js"></script>
     <script src="./App/Widgets.js"></script>
+    <script src="./App/terminal.js"></script>
+    <script src="./App/content.js"></script>
+    <script>
+        const APPS = { 'file-finder': 'win-filefinder', browser: 'win-browser', terminal: 'win-terminal' };
+
+        mountTerminal(document.getElementById('term'), {
+            content: MYOS_CONTENT,
+            openApp: (name) => {
+                const el = document.getElementById(APPS[name]);
+                if (!el) return false;
+                bringToFront(el);
+            },
+        });
+    </script>
 
 </body>
 
