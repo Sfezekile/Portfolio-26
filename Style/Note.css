@@ -95,13 +95,13 @@ li {
     height: 100%;
     box-sizing: border-box;
     padding: 10px;
+    border: none;
     resize: none;
     background-color: var(--bg-2);
     color: var(--white)
 }
 #win-notes textarea:focus {
     outline: none;
-    border: none;
 }
 
 #win-notes textarea,
