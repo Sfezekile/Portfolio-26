@@ -8,3 +8,7 @@
 function openMenu(btn) {
   btn.nextElementSibling.classList.toggle('active');
 }
+
+window.Notes = { openMenu };
+// kept as globals too since the HTML uses inline onclick=""
+window.openMenu = openMenu;
