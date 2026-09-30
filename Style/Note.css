@@ -101,6 +101,7 @@ li {
 }
 #win-notes textarea:focus {
     outline: none;
+    border: none;
 }
 
 #win-notes textarea,
