@@ -9,5 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         Browser: !!window.Browser,
         FileFinder: !!window.FileFinder,
         Terminal: !!window.Terminal
+        Notes: !!window.Notes
     });
 });
