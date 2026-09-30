@@ -233,6 +233,51 @@
             </div>
         </section>
 
+        <!-- Notes Window -->
+        <div id="win-notes" class="window" style="width:880px; height:520px; top:70px; left:35px;">
+            <div class="window-header notes-header">
+                <div class="window-title">
+                    <h2>Notes</h2>
+                </div>
+                <div class="window-control notes-control">
+                    <button class="min-btn" data-action="minimize">
+                        <!-- ─ -->
+                    </button>
+                    <button class="max-btn" data-action="maximize">
+                        <!-- <i class="ri-square-line"></i> -->
+                    </button>
+                    <button class="close-btn" data-action="close">
+                        <!-- <i class="ri-close-line"></i> -->
+                    </button>
+                </div>
+            </div>
+            <div class="menu">
+                <li>
+                    <button onclick="openMenu(this)" class="dropdown">File</button>
+                    <ul class="sub-menu">
+                        <li><a href="#">New</a></li>
+                        <li><a href="#">Open</a></li>
+                        <li><a href="#">Save</a></li>
+                        <li><a href="#">Save As...</a></li>
+                    </ul>
+                </li>
+            <li>
+                    <button onclick="openMenu(this)" class="dropdown">Edit</button>
+                    <ul class="sub-menu">
+                        <li><a href="#">Cut</a></li>
+                        <li><a href="#">Copy</a></li>
+                        <li><a href="#">Paste</a></li>
+                    </ul>
+                </li>
+            </div>
+
+            <div class="note" id="note">
+                <div class="note-log" id="log">
+                    <textarea name="notes" id=""></textarea>
+                </div>
+            </div>
+        </div>
+        
         <!-- Browser Window -->
         <div id="win-browser" class="window" style="width:880px; height:520px; top:70px; left:80px;">
             <div class="window-header browser-header"
