@@ -240,6 +240,7 @@ body.has-maximized-window #menubar {
     align-items: center;
     font-size: 28px;
     width: 35px;
+    border-radius: 10px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 .icon-img {
