@@ -235,14 +235,14 @@ body.has-maximized-window #menubar {
     transform: scale(1.05);
 }
 
-.taskbar-icon .icon-img, .icon-img img, #start-btn .logo {
+.taskbar-icon .icon-img, .icon-img img, .logo {
     display: flex;
     align-items: center;
     font-size: 28px;
     width: 35px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
-.icon-img {
+.icon-img, .logo img {
     width: 35px;
     height: 35px;
     line-height: 0.75;
