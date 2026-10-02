@@ -235,7 +235,7 @@ body.has-maximized-window #menubar {
     transform: scale(1.05);
 }
 
-.taskbar-icon .icon-img, .icon-img img {
+.taskbar-icon .icon-img, .icon-img img, #start-btn .logo {
     display: flex;
     align-items: center;
     font-size: 28px;
