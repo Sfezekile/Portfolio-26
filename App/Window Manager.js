@@ -53,7 +53,7 @@ function minimizeWindow(appId) {
 
 function toggleMaximize(winEl) {
     const isMaximized = winEl.classList.contains('maximized');
-
+    
     if (isMaximized) {
         // restore
         winEl.style.width = winEl.dataset.prevWidth || '500px';

@@ -7,10 +7,16 @@
     --sub-header: #818080;
     --bg: #333;
     --bg-2: #222;
-    --header-bg: linear-gradient(45deg, #333 0%, #444 100%);
+    --header-bg: linear-gradient(45deg, #612AB7 0%, #340282 74%);
     --blue: #4a9eff;
+    --orange: #FF7B00;
+    --orange-l: #f3bd8b;
     --tab-bg: rgb(20, 63, 28);
     --header-browser-bg: rgb(72, 37, 128);
+    --browser-bg1: linear-gradient(45deg, #612AB7 0%, #340282 74%);
+    --browser-bg2: linear-gradient(45deg, #C20AD3 0%, #E098E6 100%);
+    --browser-bg3: linear-gradient(45deg, #65ABFD 0%,  #b4d5fa 100%);
+    --browser-bg4: linear-gradient(45deg, #65ABFD 0%, #1267CA 100%);
 }
 
 /* Thin scrollbar styling */
@@ -36,7 +42,10 @@
 
 /* Browser Section */
 /* Browser Controler */
-.broswer-control {
+.browser-header {
+    background: var(--browser-bg4);
+}
+.browser-control {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +53,7 @@
     height: 100%;
     gap: 8px;
 }
-.broswer-control button {
+.browser-control button {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -54,10 +63,10 @@
     border-radius: 25px;
     border: 2px solid var(--black);
 }
-.broswer-control button:hover {
+.browser-control button:hover {
     background: var(--gray);
 }
-.broswer-control .close-btn:hover {
+.browser-control .close-btn:hover {
     background: #ff4444;
     color: white;
 }
@@ -102,7 +111,7 @@
     background: var(--gray);
 }
 .tab.active {
-    background: var(--header-browser-bg);
+    background: var(--blue);
 }
 .tab.active .tab-n {
     color: var(--white);
@@ -135,7 +144,7 @@
     justify-content: left;
     align-items: center;
     gap: 5px;
-    background: var(--header-browser-bg);
+    background: var(--browser-bg4);
     padding: 0 8px;
 }
 .tab-control button {
@@ -178,13 +187,28 @@
 #manualPage , #projectsPage, #howItWorksPage {
     width: 100%;
     height: 80vh;
-    margin-top: 0vh;
-    padding: 0 16px;
+    padding: 16px;
     flex-direction: column;
     /* align-items: left; */
     color: var(--black);
 }
+
+/* Manual Page */
+#manualPage {
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    color: var(--bg);
+    background: #fdfbf7;
+}
 .content-title {
+    display: flex;
+    justify-content: space-between;
+}
+.left-content {
+    display: flex;
+    flex-direction: column;
+    
     p {
         font-size: 2dvh;
         font-weight: 600;
@@ -202,14 +226,39 @@
     span::after {
         content: '';
         position: absolute;
-        bottom: -15px;
+        bottom: -35px;
         left: 5px;
         width: 250px;
         height: 20px;
-        /* margin-bottom: 2vh; */
         background: var(--blue);
     }
     margin-bottom: 5vh;
+
+}
+
+#win-browser.maximized .span-title {
+    font-size: 20dvh;
+}
+#win-browser.maximized .content-body p {
+    font-size: 15px;
+}
+#win-browser.maximized .browser-logo {
+    right: 15vh;
+
+    img {
+        width: 50vh;
+        height: auto;
+    }
+}
+
+.browser-logo {
+    position: relative;
+    top: 20px;
+    
+    img {
+        width: 30vh;
+        height: auto;
+    }
 }
 
 .content-body {
@@ -232,14 +281,14 @@
         text-align: justify;
     }
 }
-.search-cat {
+.cta-section {
     display: flex;
     margin-top: 5px;
     margin-left: 5px;
     margin-bottom: 20vh;
     gap: 10px;
 }
-.search-cat button{
+.cta-section button {
     padding: 10px 0px;
     background: transparent;
     text-decoration: dotted underline;
@@ -250,7 +299,7 @@
     cursor: pointer;
     line-height: 0.75;
 }
-.search-cat a {
+.cta-section a {
     text-decoration: dotted underline;
     padding: 10px 0px;
     background: transparent;
@@ -261,10 +310,12 @@
     cursor: pointer;
     line-height: 0.75;
 }
-.search-cat button:hover {
+.cta-section button:hover {
     transition: background 0.2s ease-in;
     background: var(--gray);
 }
+
+/* Project page */
 #projectsPage {
     width: 100%;
     height: 90vh;

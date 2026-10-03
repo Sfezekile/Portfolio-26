@@ -28,7 +28,7 @@
         <div class="mb-hint">sfezekile.dev — best viewed on desktop</div>
     </div>
     
-    <!-- Welcome / Intro overlay (desktop only) -->
+    <!-- Welcome / Intro overlay (desktop only) 
     <div id="intro-overlay">
         <div class="intro-card">
             <div class="intro-eyebrow">Welcome</div>
@@ -282,32 +282,9 @@
         <!-- Browser Window -->
         <div id="win-browser" class="window" style="width:880px; height:520px; top:70px; left:80px;">
             <div class="window-header browser-header"
-                style="background: var(--header-browser-bg); height: 25px; padding: 4px 12px 0px 12px; border: none;">
-                <!-- <div class="window-tab">
-                    <!-- Tab-1 is always visible --
-                    <div class="tab active" id="tab-1">
-                        <div class="tab-n">
-                            <span>Manual</span>
-                        </div>
-                        <button class="close-tab-btn" data-tab="tab-1"><i class="ri-close-line"></i></button>
-                    </div>
-                    <!-- Tab-2 starts hidden --
-                    <div class="tab" id="tab-2" style="display:none;">
-                        <div class="tab-n">
-                            <span>Projects List</span>
-                        </div>
-                        <button class="close-tab-btn" data-tab="tab-2"><i class="ri-close-line"></i></button>
-                    </div>
-                    <!-- Tab-3 starts hidden --
-                    <div class="tab" id="tab-3" style="display:none;">
-                        <div class="tab-n">
-                            <span>How It Works</span>
-                        </div>
-                        <button class="close-tab-btn" data-tab="tab-3"><i class="ri-close-line"></i></button>
-                    </div>
-                </div> -->
+                style="height: 25px; padding: 4px 12px 0px 12px; border: none;">
                 <div class="left-h"></div>
-                <div class="window-control broswer-control">
+                <div class="window-control browser-control">
                     <button class="min-btn" data-action="minimize">
                         <!-- ─ -->
                     </button>
@@ -354,8 +331,13 @@
                 <!-- TAB 1 - Manual Page -->
                 <div class="content" id="manualPage" style="display:flex;">
                     <div class="content-title">
-                        <p>Dev.</p>
-                        <span>Portfolio </br>Manual</span>
+                        <div class="left-content">
+                            <p>Dev.</p>
+                            <span class="span-title">Portfolio </br>Manual</span>
+                        </div>
+                        <div class="right-content">
+                            <div class="browser-logo"><img src="screenshots/Icons/Browser Logo.png" alt=""></div>
+                        </div>
                     </div>
                     <div class="blank-line"></div>
 
@@ -366,7 +348,7 @@
                             simulates a desktop environment with windows, taskbars, and file navigation to provide an
                             immersive and memorable experience for visitors.</p>
                     </div>
-                    <div class="search-cat">
+                    <div class="cta-section">
                         <button id="howItWorksBtn">How It Works</button>
                         <button id="projectListBtn">Project Repos</button>
                     </div>
