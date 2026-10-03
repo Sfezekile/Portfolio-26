@@ -169,7 +169,6 @@
     position: relative;
     height: 100%;
     flex: 1;
-    padding: 16px 0;
     font-size: 14px;
     color: #222;
     background: var(--white);
