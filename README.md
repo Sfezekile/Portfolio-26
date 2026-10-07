@@ -2,7 +2,7 @@
 
 # MyOS Portfolio — Debugging & Concepts Log
 
-A running record of the bugs we hit and the underlying JS/CSS concepts behind each fix, in the order we covered them.
+A running record of the bugs I hit and the underlying JS/CSS concepts behind each fix.
 
 ---
 # MyOS Portfolio
