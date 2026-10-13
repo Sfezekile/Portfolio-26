@@ -1,0 +1,223 @@
+#win-filefinder .window-body {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+}
+
+.window-body {
+    flex: 1;
+    padding: 16px;
+    background: white;
+    overflow: auto;
+    font-size: 14px;
+    color: #222;
+}
+
+.page-control {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+    background: var(--white);
+
+    button {
+        font-size: 18px;
+        line-height: 0.75;
+        color: var(--bg);
+        padding: 8px 6px;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+    }
+
+    .page-path {
+        color: var(--bg-2);
+    }
+}
+
+.page-control button:hover,
+.left-h button:hover {
+    background: var(--gray);
+}
+
+
+/* NAV SECTION */
+nav {
+    /* padding: 8px; */
+    width: 160px;
+    flex-shrink: 0;
+    background: #e6e6e6;
+    padding: 12px 8px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+    gap: 5px;
+    margin-bottom: 5px;
+    
+
+    /* span {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 2px;
+        } */
+}
+
+.sub-header {
+    font-size: 12px;
+    color: var(--black);
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    display: block;
+    margin: 4px 0 6px;
+}
+
+.sub-nav li {
+    margin-bottom: 2px;
+}
+
+li button {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    padding: 6px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    i {
+        color: var(--accent);
+    }
+}
+
+li button:hover {
+    transition: all 0.2s ease-in;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Model Section */
+.model {
+    /* width: clamp(50%, 100%, 100%); */
+    /* height: 100vh; */
+    color: var(--gray-2);
+    background: var(--white);
+
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    gap: 14px;
+    align-content: start;
+}
+
+.model-header {
+    position: relative;
+    top: -10px;
+    left: 0px;
+    width: fit-content;
+    white-space: nowrap;
+    /* Prevent text from wrapping to the next line */
+    overflow: hidden;
+    /* Hide overflowing text */
+    text-overflow: ellipsis;
+    /* Show "..." when text is cut off */
+    height: 20px;
+    border-radius: 20px;
+    background: var(--gray);
+}
+
+.page-path {
+    padding: 0 10px;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    span {
+        opacity: 0.8;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--bg-2);
+        margin-bottom: 2px;
+        margin-left: 6px;
+    }
+}
+
+.folder,
+.file {
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    color: var(--bg-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 6px; */
+    text-decoration: none;
+    cursor: pointer;
+    /* padding: 8px; */
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+}
+
+.folder {
+    gap: 20px;
+}
+
+.file {
+    gap: 6px;
+}
+
+.folder:hover,
+.file:hover,
+#home button:hover {
+    transition: all 0.2s ease-in;
+    background: var(--gray);
+}
+
+.folder-img {
+    font-size: 100px;
+    line-height: 0.75;
+
+    img {
+        width: 90px;
+    }
+}
+
+.error-page {
+    position: fixed;
+    left: 20px;
+    inset: 80px 1pc 1pc 11pc;
+    color: var(--gray-2);
+    background: var(--bg-2);
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    /* align-content: center; */
+}
