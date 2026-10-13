@@ -92,7 +92,7 @@ body {
 
     transition: transform .18s ease, opacity .18s ease;
     
-    button, .menubar-clock {
+    button, .menubar-clock, .menubar-status {
         font-size: 11px;
         font-weight: 600;
         color: var(--black);
@@ -118,6 +118,27 @@ body.has-maximized-window #menubar {
     opacity: 0.9;
     padding: 0 8px;
 }
+
+.menubar-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sys-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--black);
+    /* background: var(--white); */
+    /* border: 2px solid var(--black); */
+    /* border-radius: 15px;
+    padding: 2px 8px; */
+    cursor: default;
+}
+.sys-item i { font-size: 14px; }
+.sys-item.warn { color: #c0392b; }
 
 /* ----- TASKBAR ----- */
 #taskbar {

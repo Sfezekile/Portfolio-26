@@ -50,7 +50,7 @@
                 <button class="intro-enter-btn" id="introEnterBtn">Enter →</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- DESKTOP CONTAINER -->
     <div id="desktop">
@@ -60,9 +60,9 @@
             <button id="widgetBtn"><i class="ri-user-fill"></i> SfezekileDev</button>
             <div class="menubar-clock" id="clock">12:00</div>
             <div class="menubar-status">
-                <div class="network-icon"></div>
-                <div class="volume-icon"></div>
-                <div class="battery-icon"></div>
+                <div class="sys-item" id="networkStatus"><i class="ri-wifi-line"></i></div>
+                <div class="sys-item" id="volumeStatus"><i class="ri-volume-up-line"></i></div>
+                <div class="sys-item" id="batteryStatus"><i class="ri-battery-line"></i><span>--%</span></div>
             </div>
         </div>
 
@@ -759,6 +759,7 @@ message and make it your own.
     <script src="./App/Intro.js"></script>
     <script src="./App/App.js"></script>
     <script src="./App/server.js"></script>
+    <script src="./App/status.js"></script>
     <script src="./App/Window Manager.js"></script>
     <script src="./App/Browser.js"></script>
     <script src="./App/Clock.js"></script>
