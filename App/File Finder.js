@@ -61,11 +61,11 @@ async function OpenMiniModel() {
     const repos = await fetchGitHubRepos();
     const categorized = categorizeRepos(repos);
 
-    let html = '';
+    let html = FILE_LIST_HEADER;
     categorized.miniProjects.forEach(repo => {
         html += createRepoHTML(repo);
     });
-    if (!html) html = '<p>No mini projects found on GitHub.</p>';
+    if (!categorized.miniProjects.length) html = '<p>No mini projects found on GitHub.</p>';
 
     document.getElementById('miniProject').innerHTML = html;
 }
@@ -77,11 +77,11 @@ async function OpenCaseModel() {
     const repos = await fetchGitHubRepos();
     const categorized = categorizeRepos(repos);
 
-    let html = '';
+    let html = FILE_LIST_HEADER;
     categorized.caseStudies.forEach(repo => {
         html += createRepoHTML(repo);
     });
-    if (!html) html = `<p>No case studies found on GitHub.</p>`;
+    if (!categorized.caseStudies.length) html = `<p>No case studies found on GitHub.</p>`;
 
     document.getElementById('caseStudies').innerHTML = html;
 }
@@ -93,11 +93,11 @@ async function OpenResearchModel() {
     const repos = await fetchGitHubRepos();
     const categorized = categorizeRepos(repos);
 
-    let html = '';
+    let html = FILE_LIST_HEADER;
     categorized.research.forEach(repo => {
         html += createRepoHTML(repo);
     });
-    if (!html) html = `
+    if (!categorized.research.length) html = `
             <div class="error-page">
                 <p>No research projects found on GitHub.</p>
             </div>

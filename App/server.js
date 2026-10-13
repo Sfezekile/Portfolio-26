@@ -56,24 +56,35 @@ function categorizeRepos(repos) {
     return categories;
 }
 
+function formatDate(iso) {
+    return new Date(iso).toLocaleDateString('en-ZA', {
+        day: 'numeric', month: 'short', year: 'numeric'
+    });
+}
+
+const FILE_LIST_HEADER = `
+    <div class="file-header">
+        <span></span><span>Name</span><span>Date modified</span><span>Type</span>
+    </div>`;
+
 // Function to create HTML for a repository
 function createRepoHTML(repo) {
-    const icon = 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256';
+    const icon = './screenshots/Icons/File icon.png';
     const repoName = repo.name.replace(/-/g, ' ').replace(/_/g, ' ');
 
     return `
         <a href="${repo.html_url}" target="_blank" class="file">
-            <div class="folder-img">
-                <img src="${icon}" alt="${repoName}">
-            </div>
-            <span>${repoName}</span>
+            <div class="folder-img"><img src="${icon}" alt=""></div>
+            <span class="file-name">${repoName}</span>
+            <span class="file-date">${formatDate(repo.updated_at)}</span>
+            <span class="file-type">${repo.language || 'Folder'}</span>
         </a>
     `;
 }
 
 // Function to create HTML for a repository
 function createProjRepoHTML(repo) {
-    const icon = 'https://cdn.iconscout.com/icon/premium/png-512-thumb/document-folder-icon-svg-download-png-10290706.png?f=webp&w=256';
+    const icon = './screenshots/Icons/File icon.png';
     const repoName = repo.name.replace(/-/g, ' ').replace(/_/g, ' ');
     const repoLanguage = repo.language ? `<span class="repo-language">${repo.language}</span>` : '';
     const repoUpdated = repo.updated ? `<span class="repo-updated">${repo.updated_at}</span>` : '';

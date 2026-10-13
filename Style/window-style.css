@@ -2,7 +2,7 @@
     --black: #1a1a1a;
     --white: #fff;
     --gray: rgba(255, 255, 255, 0.15);
-    --gray-2: #cec8c8;
+    --gray-2: #e2e1e1;
     --sub-header: #818080;
     --bg: #333;
     --bg-2: #222;
@@ -190,9 +190,10 @@ body {
 /* NAV SECTION */
 nav {
     /* padding: 8px; */
+    --bg-nav: #e6e6e6;
     width: 160px;
     flex-shrink: 0;
-    background: #e6e6e6;
+    background: var(--bg-nav);
     padding: 12px 8px;
     overflow-y: auto;
     box-sizing: border-box;
@@ -206,13 +207,6 @@ ul {
     padding: 0;
     gap: 5px;
     margin-bottom: 5px;
-    
-
-    /* span {
-        font-size: 12px;
-        font-weight: 500;
-        margin-bottom: 2px;
-        } */
 }
 
 .sub-header {
@@ -322,7 +316,7 @@ li button:hover {
     text-decoration: none;
     cursor: pointer;
     /* padding: 8px; */
-    border-radius: 8px;
+    /* border-radius: 8px; */
     font-size: 12px;
     padding: 10px;
     text-align: center;
@@ -343,14 +337,47 @@ li button:hover {
     background: var(--gray);
 }
 
-.folder-img {
-    font-size: 100px;
-    line-height: 0.75;
-
-    img {
-        width: 90px;
-    }
+/* One column of rows instead of an icon grid */
+.model.list-view {
+    grid-template-columns: 1fr;
+    gap: 0px;
+    padding: 0 8px 8px;
 }
+
+.file-header,
+.list-view .file {
+    display: grid;
+    grid-template-columns: 28px 1fr 130px 90px;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+.file-header {
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--sub-header);
+    border-bottom: 1px solid var(--gray-2);
+}
+
+.list-view .file {
+    background: #e6e6e6;
+    flex-direction: row;
+    /* border-radius: 6px; */
+    font-size: 13px;
+}
+
+.list-view .folder-img { font-size: 0; }
+.list-view .folder-img img { width: 24px; height: 29px; }
+
+.file-date, .file-type { color: var(--sub-header); font-size: 12px; }
+.file-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .error-page {
     position: fixed;
